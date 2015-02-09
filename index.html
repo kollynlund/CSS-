@@ -2,27 +2,81 @@
 <html>
 <head>
   <title>CSS - Customer Satisfaction Survey</title>
-  <link rel="stylesheet" type="text/css" href="css/log-in.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/log-in.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/my-styles.css" rel="stylesheet" media="screen">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
   <script src="js/functions.js"></script>
+      <script src="js/bootstrap.min.js"></script>      
+
 </head>
 
 <body>
 
-	<span class="button" id="toggle-login">Log in</span>
 
-	<div id="login">
-	  <div id="triangle"></div>
-	  <h1>Log in</h1>
-	  <form>
-	    <input type="email" placeholder="Email" />
-	    <input type="password" placeholder="Password" />
-	    <input href="admin.home.html" type="submit" value="Log in" />
-	    
-	  </form>
-	  	</div>
-	  	<p><a href="admin-home.html"></a></p>
 
+
+
+    <!--Navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a class="main-logo pull-left" href="#"></a>
+        <p class="navbar-text hidden-xs">A Bad Bananas Project</p>
+        <button type="button" class="button pull-right" data-toggle="modal" data-target="#myModal">Log in <i class="fa fa-user"></i></button>
+      </div><!-- End container -->
+    </div><!-- End navbar -->
+
+
+    <!-- Jumbotron -->
+     <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+
+        <!-- Modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body">
+                
+                
+                              <form>
+                                <input type="email" placeholder="Email" />
+                                <input type="password" placeholder="Password" />
+                                <a href="admin-home.html"><input type="submit" value="Log in" /></a>
+                              </form>
+                            
+              </div>
+              
+      
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+          <div class="col-sm-6">
+            <h1>Simplified Customer Satisfaction Surveys</h1>
+            <p class="lead">Implement our state of the art software to find out how your customer feel.</p>
+            <p class="lead">Or download the app and try it first.</p>
+            <p class="lead">
+              <a class="btn btn-default btn-lg" href="#" data-icon="&#xe001;">iOS</a>
+              <a class="btn btn-default btn-lg" href="#" data-icon="&#xe002;">Android</a>
+            </p>
+          </div>
+          <div class="col-sm-6 hidden-xs">
+            <div class="device pull-right"></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Jumbotron -->
+
+
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>      
 
 <script src="js/functions.js"></script>
 
