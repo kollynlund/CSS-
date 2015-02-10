@@ -1,0 +1,19 @@
+{
+  "name": "CSS-",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kollynlund/CSS-",
+  "authors": [
+    "tbindrup <tbindrup1221@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.4"
+  }
+}
