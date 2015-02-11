@@ -49,7 +49,7 @@ a:hover {
 }
 
 .survey-name {
-	color: #03A9F4;
+	color: black;
 	background-color: #fff;
 	text-align: center;
 	padding-top: 7.5px;
@@ -85,8 +85,13 @@ a:hover {
 
 .live-icon, .data-icon, .edit-icon {
 	padding-right: 5px;
-	font-size: 1.5em !important;
-	color: #F61C3B;
+	font-size: 1.3em !important;
+	color: #0863DD;
+}
+
+.log-out-icon, .settings-icon, .add-survey-icon {
+	color: black ;
+	padding-right: 7.5px;
 }
 
 
@@ -108,11 +113,11 @@ ul.dropdown {
   margin-top: .5em;
   margin-left: -6em;
   z-index: 60;
-  background: #eee;
+  background: #03A9F4;
   min-width: 12em;
   padding: 0;
   border-radius: 0 0 .2em .2em;
-  box-shadow: 0px 2px 4px 2px #555555;
+  box-shadow: 0px 4px 5px 1px #999;
 
 }
 ul.dropdown li {
@@ -121,10 +126,9 @@ ul.dropdown li {
 }
 ul.dropdown li a {
   text-decoration: none;
-  padding: .5em .5em;
+  padding: .4em .5em;
   display: block;
-  color: #222 !important;
-  border-bottom: 1px solid black;
+  color: black !important;
 }
 
   

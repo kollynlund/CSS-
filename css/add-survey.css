@@ -71,10 +71,21 @@ button[value='Add Question'], {
 
 button[value="Finish Survey"] {
 	width: 20%;
-	background-color: #03A9F4; 
+	color: #03A9F4; 
+	background-color: transparent;
 }
 
+button[value="Finish Survey"]:hover {
+	background-color: #08D3DD;
+}
 
+.finish-s-icon {
+	color: #03A9F4; 
+}
+
+.finish-s-icon:hover {
+	color: #eee; 
+}
 
 .add-q-icon, .finish-s-icon {
 	float: right;
