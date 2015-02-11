@@ -21,9 +21,7 @@ $(document).click(function(e) {
     $('.dropdown').hide();
   }
 
-$( "#yesno" ).click(function() {
-	$( this ).addClass( "btn-active" );
-	$( "#scale" ).removeClass( "btn-active" );
 
 });
+
 
