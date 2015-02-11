@@ -1,13 +1,13 @@
-<<<<<<< HEAD
-// $( "#yesno" ).click(function() {
-// 	$( this ).addClass( "btn-active" );
-// 	$( "#scale" ).removeClass( "btn-active" );
-// });
 
-// $( "#scale" ).click(function() {
-// 	$( this ).addClass( "btn-active" );
-// 	$( "#yesno" ).removeClass( "btn-active" );
-// });
+$( "#yesno" ).click(function() {
+	$( this ).addClass( "btn-active" );
+	$( "#scale" ).removeClass( "btn-active" );
+});
+
+$( "#scale" ).click(function() {
+	$( this ).addClass( "btn-active" );
+	$( "#yesno" ).removeClass( "btn-active" );
+});
 
 
 
@@ -20,10 +20,10 @@ $(document).click(function(e) {
   if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
     $('.dropdown').hide();
   }
-=======
+
 $( "#yesno" ).click(function() {
 	$( this ).addClass( "btn-active" );
 	$( "#scale" ).removeClass( "btn-active" );
->>>>>>> FETCH_HEAD
+
 });
 
