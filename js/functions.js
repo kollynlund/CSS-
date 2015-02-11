@@ -1,7 +1,3 @@
-
-
-
-
 $( "#yesno" ).click(function() {
 	$( this ).addClass( "btn-active" );
 	$( "#scale" ).removeClass( "btn-active" );
