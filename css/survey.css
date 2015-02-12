@@ -2,6 +2,8 @@
 	height: 1000px;
 }
 
+html, body { overflow:hidden; }
+
 .present-hand {
 	width: 300px;
 	margin-left: 30%;
