@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CSS - Customer Satisfaction Survey</title>
-  <link rel="stylesheet" type="text/css" href="css/admin.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="import" href="components/polymer/polymer.html">
-  <link rel="stylesheet" type="text/css" href="css/add-survey.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-  <script src="js/functions.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/d3.v3.min.js"></script>
-  <script src="js/queue.v1.min.js"></script>
-  <script src="js/survey_data_handling.js"></script>
+	<title>CSS - Customer Satisfaction Survey</title>
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="import" href="components/polymer/polymer.html">
+	<link rel="stylesheet" type="text/css" href="css/add-survey.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+	<script src="js/functions.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/d3.v3.min.js"></script>
+	<script src="js/queue.v1.min.js"></script>
+	<script src="js/survey_data_handling.js"></script>
 </head>
 
 <body>
 <div class="container-fluid header">
   <div class="row">
-
 		<div class="col-sm-10">
-			<a href="admin-home.html"><div class="company-name-header">Kneaders |</div><div class="text-header">  Customer Satisfaction Survey</div></a>
+			<a href="admin-home.html">
+				<div class="company-name-header">Kneaders |</div><div class="text-header">  Customer Satisfaction Survey</div>
+			</a>
 			<!-- <img class="logo" src="img/logo.png"></img> -->
 		</div>
 
 		<div class="col-sm-2">
 			<nav class="pull-right">
-			<a class="dropdown-toggle" href="#" title="Menu"><i class="fa fa-bars"></i></a>
+				<a class="dropdown-toggle" href="#" title="Menu">
+					<i class="fa fa-bars"></i>
+				</a>
+
 				<ul class="dropdown">
-				  <li><a href="#"><i class="fa fa-cog settings-icon"></i> Settings</a></li>
-				  <li><a href="#" data-toggle="modal" data-target="#add-quiz-modal"><i class="fa fa-plus add-survey-icon"></i> Add Survey</a></li>
-				  <li><a href="#"><i class="fa fa-power-off log-out-icon"></i> Log Out</a></li>
+				  	<li><a href="#"><i class="fa fa-cog settings-icon"></i> Settings</a></li>
+
+				  	<li><a href="#" data-toggle="modal" data-target="#add-quiz-modal"><i class="fa fa-plus add-survey-icon"></i> Add Survey</a></li>
+
+				  	<li><a href="#"><i class="fa fa-power-off log-out-icon"></i> Log Out</a></li>
 				</ul>
 			</nav>
 	    </div>
-
    </div> <!-- closes row -->
-
 </div> <!-- closes container-fluid -->
 
 <div class="cover">
-
-<div class="container">
-	<div class="surveys  col-sm-12">
-
-
-	</div> <!-- closes survey -->	
+	<div class="container">
+		<div class="surveys  col-sm-12">
+			<!-- Surveys are dynamically loaded here -->
+		</div> <!-- closes survey -->	
+	</div>
 </div>
-
-</div>
-
 
 
 <!-- MODALS!!!!!!!!!!! -->
+
 
 <!-- Add-Quiz-Modal -->
 <div class="modal fade" id="add-quiz-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -159,7 +160,7 @@
     </div>
 </div> <!-- closes modal -->
 
-<!-- Modal -->
+<!-- Confirm Delete Question Modal -->
 <div class="modal" id="confirm-delete-question" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-content">
       	<div class="modal-header">
@@ -180,7 +181,7 @@
     </div> <!-- close content -->
 </div> <!-- close modal -->
 
-<!-- Modal -->
+<!-- Confirm Finish Survey Modal -->
 <div class="modal" id="confirm-finish-survey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-content">
       	<div class="modal-header">
@@ -201,7 +202,7 @@
     </div> <!-- close content -->
 </div> <!-- close modal -->
 
-<!-- Modal -->
+<!-- Confirm Delete Survey Modal -->
 <div class="modal" id="confirm-delete-survey" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-content">
       	<div class="modal-header">
