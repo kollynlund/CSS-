@@ -75,8 +75,7 @@ button[value='Scale'] {
 
 
 #add-question {
-	border: none !important;
-	background-color: transparent; 
+	border: none !important; 
 	margin-top: 10px;
 	float: right;
 
