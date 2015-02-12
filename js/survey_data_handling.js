@@ -5,6 +5,7 @@ var surveystuff = d3.json('http://localhost:5000/api/survey', function(data){ va
 function loadSurveys(error, surveys) {
 	var surveys_container = d3.select('.surveys');
 	surveys.objects.forEach(function(d) {
+		console.log(d);
 		var new_survey = surveys_container
 						 .append('div')
 						 .attr('class', 'survey col-sm-4')
@@ -31,12 +32,13 @@ function loadSurveys(error, surveys) {
 								   .append("div")
 								   .attr("class", 'survey-secondary')
 								   ;
-
-		new_survey_secondary
-		.append('p')
-		.attr('class','live-txt')
-		.html('<i class="fa fa-globe live-icon"></i>This survey is live')
-		;
+		if (d.is_live) {
+			new_survey_secondary
+			.append('p')
+			.attr('class','live-txt')
+			.html('<i class="fa fa-globe live-icon"></i>This survey is live')
+			;
+		}
 
 		new_survey_secondary
 		.append('p')
