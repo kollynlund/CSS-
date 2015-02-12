@@ -45,10 +45,16 @@ function loadSurveys(error, surveys) {
 		;
 
 		new_survey_secondary
+		.append('a')
+		.attr('class','edit-survey-link')
+		.attr('href','#')
 		.append('p')
 		.attr('class','edit-icon-txt')
+		.attr('data-toggle','modal')
+		.attr('data-target','#edit-quiz-modal')
 		.html('<i class="fa fa-pencil edit-icon"></i>Edit')
 		;
+
 
 	})
 	;
