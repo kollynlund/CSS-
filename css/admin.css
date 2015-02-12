@@ -1,14 +1,24 @@
+
+
+
 * {
 	color: #000;
+	font-family: Roboto;
+	font-weight: 300;
 }
 
-.container {
+
+.cover {
+	background-color: #eee;
+	padding-bottom: 500px;
 }
 
 .header {
 	background-color: #03A9F4;
 	box-shadow: 0px 5px 15px 0px #999;
 	height: 60px;	
+	position: relative;
+	z-index: 100;
 }
 
 .fa-bars {
@@ -23,11 +33,18 @@ a:hover {
 }
 
 .company-name-header {
-	font-size: 1.25em;
+	font-size: 3em;
 	color: #000;
 	text-decoration: none;
 	display: inline-block;
-	margin-top: 15px;
+	margin-top: 0px;
+	font-family: "Grand Hotel"
+}
+
+.text-header {
+	font-family: Roboto;
+	display: inline;
+	font-size: 1.25em;
 }
 
 .add-survey-btn { 
@@ -57,9 +74,10 @@ a:hover {
 	font-weight: 400;
 	letter-spacing: 1px;
 	font-size: 1.125em;
-	box-shadow: 0px 2px 4px 1px #555555;
+	box-shadow: 0px 2px 4px 1px #ccc;
 	position: relative;
 	z-index: 40;
+
 
 
 }
@@ -67,19 +85,19 @@ a:hover {
 
 
 .survey-secondary {
-	background-color: #ddd;
+	background-color: #fff;
 	padding-left: 10px;
 	padding-bottom: 5px;
 	padding-top: 5px;
-	width: 97%;
+	width: 99%;
 	margin: auto;
 	border-top: none;
-	box-shadow: 0px 2px 4px 1px #555555;
+	box-shadow: 0px 2px 10px 1px #ccc;
 
 }
 
 .survey-secondary > :first-child {
-	margin-top: 10px !important;
+	margin-top: 10px;
 
 }
 
@@ -87,6 +105,16 @@ a:hover {
 	padding-right: 5px;
 	font-size: 1.3em !important;
 	color: #0863DD;
+}
+
+/*.edit-icon:hover, .edit-icon-txt:hover {
+	color: #77CBF4;
+}*/
+
+.survey-secondary p:hover {
+	color: #0863DD;
+	font-weight: 400;
+
 }
 
 .log-out-icon, .settings-icon, .add-survey-icon {
@@ -131,8 +159,10 @@ ul.dropdown li a {
   color: black !important;
 }
 
+ul.dropdown li a:hover {
+	background-color: #77CBF4;
+}
   
-
 
 
 

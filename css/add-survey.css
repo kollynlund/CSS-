@@ -23,9 +23,19 @@
 
 }
 
+
+.down-arrow {
+	position: relative;
+	left: -15px;
+}
+
+option {
+	margin-left: 5px !important;
+}
+
 .question-block {
-	background-color: #03A9F4;
-	box-shadow: 0px 5px 3px 3px #555555;
+	background-color: #fff;
+	box-shadow: 0px 4px 5px 1px #999;
 
 }
 
@@ -45,7 +55,6 @@ button[value='Delete Question'] {
 
 input[type="text"] {
 	margin-bottom: 10px;
-	padding: 10px;
 	margin-top: 30px;
 	display: block;
 	width: 96%;
@@ -70,17 +79,13 @@ button[value='Add Question'], {
 }
 
 button[value="Finish Survey"] {
-	width: 20%;
-	color: #03A9F4; 
-	background-color: transparent;
+	
+
 }
 
-button[value="Finish Survey"]:hover {
-	background-color: #08D3DD;
-}
 
 .finish-s-icon {
-	color: #03A9F4; 
+	color: #eee; 
 }
 
 .finish-s-icon:hover {
@@ -105,4 +110,59 @@ button[value="Finish Survey"]:hover {
 
 
 
+
+
+.search {
+  margin: 0 auto;
+  margin-top: 10px;
+  background: none;
+}
+
+
+.search-input {
+  width: 300px;
+  height: 25px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid grey;
+  color: black !important;
+  transition: all .5s ease;
+}
+.search-input-q-type {
+  width: 175px !important;
+  height: 25px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid grey;
+  color: black;
+  transition: all .5s ease;
+}
+
+.search-input-q-type:focus {
+  border-bottom: 2px solid #03A9F4;
+}
+
+
+.search-input:focus {
+  border-bottom: 2px solid #03A9F4;
+}
+
+select, .search-input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+select {
+	cursor: pointer;
+}
+
+.first-option {
+	color: red;
+}
+
+.modal-add-quiz {
+	background-color: #eee;
+}
 
