@@ -20,3 +20,4 @@ $(document).click(function(e) {
   if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
     $('.dropdown').hide();
   }
+ })
