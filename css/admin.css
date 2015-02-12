@@ -27,6 +27,12 @@
 	margin-top: 5px;
 	font-size: 1.5em !important ;
 }
+/*
+.logo {
+	width: 140px;
+	position: relative;
+	top: -10px;
+}*/
 
 a:hover {
 	text-decoration: none !important;
@@ -38,7 +44,7 @@ a:hover {
 	text-decoration: none;
 	display: inline-block;
 	margin-top: 0px;
-	font-family: "Grand Hotel"
+	font-family: "Grand Hotel";
 }
 
 .text-header {
