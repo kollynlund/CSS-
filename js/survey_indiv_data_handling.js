@@ -1,7 +1,3 @@
-var surveys = d3.json('http://localhost:5000/api/survey', function(data){ return data; });
-
-
-
 function loadSurveys(error, surveys) {
 	var surveys_container = d3.select('.surveys');
 	surveys.objects.forEach(function(d) {

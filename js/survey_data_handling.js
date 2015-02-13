@@ -5,7 +5,6 @@ var surveystuff = d3.json('http://localhost:5000/api/survey', function(data){ va
 function loadSurveys(error, surveys) {
 	var surveys_container = d3.select('.surveys');
 	surveys.objects.forEach(function(d) {
-		console.log(d);
 		var new_survey = surveys_container
 						 .append('div')
 						 .attr('class', 'survey col-sm-4')
