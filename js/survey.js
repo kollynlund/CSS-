@@ -34,7 +34,8 @@ function RageRange () {
         var uiHandle = document.createElement('span');
         uiHandle.className = 'slider-handle';
 
-        var iDivisions = (range_setup.range.max / range_setup.step) - 1;
+        var iDivisions = ((range_setup.range.max - range_setup.range.min)  / range_setup.step) - 1;
+        console.log(iDivisions);
         var i = 1;
         while (i <= iDivisions) {
             var uiDivisions = document.createElement('span');
@@ -57,6 +58,7 @@ function RageRange () {
             uiManualInput.type = 'text';
             uiManualInput.className = 'input';
             uiManualInput.value = range_setup.startPosition;
+            uiManualInput.style.visibility = 'hidden';
 
             uiSliderContainer.className = 'slider-container with-input';
             uiSliderContainer.appendChild(uiManualInput);
@@ -78,8 +80,8 @@ function RageRange () {
 
             // SET UP DEFAULTS
 
-            var division = 100 / (range_setup.range.max / range_setup.step);
-            var size = 100 / (range_setup.range.max / range_setup.startPosition);
+            var division = 100 / ((range_setup.range.max - range_setup.range.min) / range_setup.step);
+            var size = 100 / ((range_setup.range.max - range_setup.range.min) / range_setup.startPosition);
 
             uiSlider.dataset.valueFirst = range_setup.range.min;
             uiSlider.dataset.valueLast = range_setup.range.max;
@@ -91,7 +93,7 @@ function RageRange () {
             var i = 1;
             Array.prototype.forEach.call(divisions, function(el) {
                 el.style.left = i * division.toString() + "%";
-                el.dataset.value = i * range_setup.step;
+                el.dataset.value = (i + rangeMin)* range_setup.step;
                 i++;
             });
         }
