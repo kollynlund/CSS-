@@ -8,28 +8,68 @@ html, body { overflow:hidden; }
 * {
   margin: 0;
   padding: 0;
+  font-family: Roboto;
+}
+
+.intro {
+  background-color: #333;
+  font-family: Roboto;
+  padding: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-size: 2.5em !important;
+}
+
+.btn-next {
+  padding: 40px 80px 40px 80px;
+  border-radius: 0px;
+}
+
+.btn-finish {
+  padding: 40px 80px 40px 80px;
+  border-radius: 0px;
+  font-size: 1.5em;
+}
+
+.btn-enter {
+  padding: 40px;
+  font-family: Roboto;
+  font-size: 2em;
+  margin-left: 30%;
+  margin-top: 30px ;
+  border-radius: 0px;
 }
 
 .status {
   font-size: 0;
   width: 100%;
-  box-shadow: 0px 5px 5px 5px #333;
+  box-shadow: 0px 5px 5px 5px #aaa;
 }
 
 .col {
-  font-size: 2rem; background-color: gray;
-  color: #eee;
+  font-size: 2.5rem; 
+  background-color: #eee;
+  color: #a085c6 !important;
   width: 20%;
   display: inline-block;
   text-align: center;
-  margin-top: 0px;
+  margin-top: -6px;
   padding: 20px 0 20px 0;
-  
+  font-weight: 600; 
+}
+
+.gold {
+  color: #F4BE26 !important;
+  font-size: 3em !important;
 }
 
 .active {
-  background-color: #eee;
+  background-color: #ddd;
   color: gray;
+}
+
+.fa-arrow-right {
+  font-size: 3em !important;
 }
 
 
@@ -45,18 +85,19 @@ html, body { overflow:hidden; }
 
 
 
-
-
 .present-hand {
 	width: 300px;
 	margin-left: 30%;
+  color: white !important;
 }
 
-.container {
+.question-container {
   margin-top: 50px;
+  max-height: 250px;
+  min-height: 250px;
 }
 
-.container p {
+.question-container p {
   margin-bottom: 30px;
   font-size: 1.5em;
 }

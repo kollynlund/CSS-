@@ -6,6 +6,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/survey.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,300italic' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	<script src="js/survey.js"></script>
 </head>
@@ -14,9 +15,9 @@
 
 
 <div id="head" class="jumbotron">
-  <h1>Take this 4 question survey and recieve 35% off next time you come to Kneaders</h1>
+  <h1 class="intro">Take this 4 question survey and recieve 35% off next time you come to Kneaders</h1>
   <img class="present-hand" src="img/present3.svg">
-  <p><a class="btn btn-primary btn-lg pull-right" href="#q1" role="button">Enter Survey</a></p>
+  <p><a class="btn btn-enter btn-primary btn-lg" href="#q1" role="button">Enter Survey</a></p>
 </div>
 	
 
@@ -37,27 +38,27 @@
 	   <div class="col">2</div>
 	   <div class="col">3</div>
 	   <div class="col">4</div>
-	   <div class="col"><i class="fa fa-gift"></i></div>
+	   <div class="col"><i class="fa fa-gift gold"></i></div>
 	</div>
 </div>
 
 <div  class="jumbotron">
 
-	<div class="page-header">
-    <h1>Kneaders Survey</h1><p>You have 3 questions left</p>
-  </div> <!-- close page header -->
+<div class="page-header">
+   <h1>Kneaders Survey</h1><p>You have 3 questions left</p>
+</div> <!-- close page header -->
 
-<div class="container">
+<div class="question-container">
   <p>On a scale from 1 to 5, with 1 being dirty and 5 being clean how is the cleanliness of our restaurant?</p>
-    
       <div class="lever">
         <div class="ragerange">
             <input type="range" min="1" max="5" step="1" value="2.25" class="custom-range" />
         </div>
       </div> <!-- close slider -->
-    
+</div> <!-- close question-container -->
+
  
-  <p><a class="btn btn-primary btn-lg pull-right" href="#q2" role="button"><i class="fa fa-arrow-right"></i>
+  <p><a class="btn btn-primary pull-right btn-next" href="#q2" role="button"><i class="fa fa-arrow-right"></i>
 </a></p>
  
 </div> <!-- close jumbotron -->
@@ -79,14 +80,15 @@
 	   <div class="col active">2</div>
 	   <div class="col">3</div>
 	   <div class="col">4</div>
-	   <div class="col"><i class="fa fa-gift"></i></div>
+	   <div class="col"><i class="fa fa-gift gold"></i></div>
 	</div>
 </div>
 
 <div id="q2" class="jumbotron">
 	<div class="page-header">
-  <h1>Survey Q2</h1><p>You have 2 questions left</p>
-  </div>
+        <h1>Survey Q2</h1><p>You have 2 questions left</p>
+    </div>
+<div class="question-container">
   <p>Did you enjoy your food?</p>
 
   <label class="radio"><p>Yes</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
@@ -102,10 +104,9 @@
           <span class="dot"></span>
         </span>
       </label>
- 
+ </div>
   
- 
-  <p><a class="btn btn-primary btn-lg pull-right" href="#q3" role="button">Next Question<i class="fa fa-arrow-right"></i>
+   <p><a class="btn btn-primary pull-right btn-next" href="#q3" role="button"><i class="fa fa-arrow-right"></i>
 </a></p>
 </div>
 
@@ -123,7 +124,7 @@
 	   <div class="col active">2</div>
 	   <div class="col active">3</div>
 	   <div class="col">4</div>
-	   <div class="col"><i class="fa fa-gift"></i></div>
+	   <div class="col"><i class="fa fa-gift gold"></i></div>
 	</div>
 </div>
 
@@ -131,6 +132,7 @@
 	<div class="page-header">
   <h1>Survey Q3</h1><p>You have 1 question left</p>
   </div>
+<div class="question-container">
   <p>When was the last time you came to Kneaders?</p>
 
   <label class="radio"><p>1 week</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
@@ -154,10 +156,10 @@
           <span class="dot"></span>
         </span>
       </label>
- 
+ </div>
   
  
-  <p><a class="btn btn-primary btn-lg pull-right" href="#q4" role="button">Continue<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <p><a class="btn btn-primary pull-right btn-next" href="#q4" role="button"><i class="fa fa-arrow-right"></i>
 </a></p>
 </div>
 
@@ -181,14 +183,15 @@
 	   <div class="col active">2</div>
 	   <div class="col active">3</div>
 	   <div class="col active">4</div>
-	   <div class="col"><i class="fa fa-gift"></i></div>
+	   <div class="col"><i class="fa fa-gift gold"></i></div>
 	</div>
 </div>
 
 <div id="q4" class="jumbotron">
 	<div class="page-header">
-  <h1>Survey Q4</h1>
+  <h1>Survey Q4</h1><p>This is your last question</p>
   </div>
+<div class="question-container">
   <p>Will you tell your friends about what you ate today?</p>
 
   <label class="radio"><p>
@@ -205,12 +208,11 @@
           <span class="dot"></span>
         </span>
       </label>
-
-
+</div>
  
   
  
-  <p><a class="btn btn-success btn-lg pull-right" href="#reward" role="button">Get your coupon<i class="fa fa-arrow-right"></i>
+     <p><a class="btn btn-primary pull-right btn-next" href="#reward" role="button"><i class="fa fa-arrow-right"></i>
 </a></p>
 </div>
 
@@ -229,27 +231,28 @@
 	   <div class="col active">2</div>
 	   <div class="col active">3</div>
 	   <div class="col active">4</div>
-	   <div class="col active"><i class="fa fa-gift"></i></div>
+	   <div class="col active"><i class="fa fa-gift gold"></i></div>
 	</div>
 </div>
 
 <div id="reward" class="jumbotron">
 	<div class="page-header">
-  <h1>Survey Reward</h1>
+  <h1>Survey Reward</h1><p>You are done.</p>
   </div>
+  <div class="question-container">
   <p>Thanks for taking the survey, enter your email address to redeem your coupon!</p>
 
       <div class="custom-input">
         <input type="textarea" value="" placeholder="Email" />
         <span class="placeholder" data-holder="Placeholder">Email</span>
       </div>
-
+</div>
 
 
  
   
  
-  <p><a class="btn btn-primary btn-lg pull-right" href="#head" role="button">Finish
+   <p><a class="btn btn-primary pull-right btn-finish" href="#head" role="button">Submit
 </a></p>
 </div>
 
