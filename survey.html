@@ -5,6 +5,7 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/survey.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	<script src="js/survey.js"></script>
 </head>
@@ -30,27 +31,37 @@
 
 
 
+<div id="q1">
+	<div  class="status">
+	  <div class="col active">1</div>
+	   <div class="col">2</div>
+	   <div class="col">3</div>
+	   <div class="col">4</div>
+	   <div class="col"><i class="fa fa-gift"></i></div>
+	</div>
+</div>
 
-
-<div id="q1" class="jumbotron">
+<div  class="jumbotron">
 
 	<div class="page-header">
-    <h1>Survey Q1</h1>
+    <h1>Kneaders Survey</h1><p>You have 3 questions left</p>
   </div> <!-- close page header -->
 
+<div class="container">
   <p>On a scale from 1 to 5, with 1 being dirty and 5 being clean how is the cleanliness of our restaurant?</p>
     
       <div class="lever">
         <div class="ragerange">
-            <input type="range" min="0" max="5" step="1" value="256" class="custom-range" />
+            <input type="range" min="1" max="5" step="1" value="2.25" class="custom-range" />
         </div>
       </div> <!-- close slider -->
     
  
-  <p><a class="btn btn-primary btn-lg pull-right" href="#q2" role="button">Next Question<i class="fa fa-arrow-right"></i>
+  <p><a class="btn btn-primary btn-lg pull-right" href="#q2" role="button"><i class="fa fa-arrow-right"></i>
 </a></p>
  
 </div> <!-- close jumbotron -->
+</div>
 
 
 
@@ -62,12 +73,19 @@
 
 
 
-
-
+<div id="q2">
+	<div  class="status">
+	  <div class="col active">1</div>
+	   <div class="col active">2</div>
+	   <div class="col">3</div>
+	   <div class="col">4</div>
+	   <div class="col"><i class="fa fa-gift"></i></div>
+	</div>
+</div>
 
 <div id="q2" class="jumbotron">
 	<div class="page-header">
-  <h1>Survey Q2</h1>
+  <h1>Survey Q2</h1><p>You have 2 questions left</p>
   </div>
   <p>Did you enjoy your food?</p>
 
@@ -99,11 +117,19 @@
 
 
 
-
+<div id="q3">
+	<div  class="status">
+	  <div class="col active">1</div>
+	   <div class="col active">2</div>
+	   <div class="col active">3</div>
+	   <div class="col">4</div>
+	   <div class="col"><i class="fa fa-gift"></i></div>
+	</div>
+</div>
 
 <div id="q3" class="jumbotron">
 	<div class="page-header">
-  <h1>Survey Q3</h1>
+  <h1>Survey Q3</h1><p>You have 1 question left</p>
   </div>
   <p>When was the last time you came to Kneaders?</p>
 
@@ -131,7 +157,7 @@
  
   
  
-  <p><a class="btn btn-primary btn-lg pull-right" href="#q4" role="button">Next Question<i class="fa fa-arrow-right"></i>
+  <p><a class="btn btn-primary btn-lg pull-right" href="#q4" role="button">Continue<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 </a></p>
 </div>
 
@@ -149,7 +175,15 @@
 
 
 
-
+<div id="q4">
+	<div  class="status">
+	  <div class="col active">1</div>
+	   <div class="col active">2</div>
+	   <div class="col active">3</div>
+	   <div class="col active">4</div>
+	   <div class="col"><i class="fa fa-gift"></i></div>
+	</div>
+</div>
 
 <div id="q4" class="jumbotron">
 	<div class="page-header">
@@ -176,7 +210,7 @@
  
   
  
-  <p><a class="btn btn-success btn-lg pull-right" href="#reward" role="button">Redeem your reward<i class="fa fa-arrow-right"></i>
+  <p><a class="btn btn-success btn-lg pull-right" href="#reward" role="button">Get your coupon<i class="fa fa-arrow-right"></i>
 </a></p>
 </div>
 
@@ -189,7 +223,15 @@
 
 
 
-
+<div id="reward">
+	<div class="status">
+	  <div class="col active">1</div>
+	   <div class="col active">2</div>
+	   <div class="col active">3</div>
+	   <div class="col active">4</div>
+	   <div class="col active"><i class="fa fa-gift"></i></div>
+	</div>
+</div>
 
 <div id="reward" class="jumbotron">
 	<div class="page-header">
@@ -198,7 +240,7 @@
   <p>Thanks for taking the survey, enter your email address to redeem your coupon!</p>
 
       <div class="custom-input">
-        <input type="text" value="" placeholder="Email" />
+        <input type="textarea" value="" placeholder="Email" />
         <span class="placeholder" data-holder="Placeholder">Email</span>
       </div>
 
