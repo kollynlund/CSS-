@@ -1,5 +1,6 @@
 .jumbotron {
 	height: 1000px;
+  padding-top: 20px;
 }
 
 html, body { overflow:hidden; }
@@ -53,14 +54,17 @@ html, body { overflow:hidden; }
   width: 20%;
   display: inline-block;
   text-align: center;
-  margin-top: -6px;
-  padding: 20px 0 20px 0;
+  margin-top: -10px;
+  padding: 40px 0 40px 0;
   font-weight: 600; 
 }
 
 .gold {
   color: #F4BE26 !important;
-  font-size: 3em !important;
+  font-size: 2em !important;
+  margin-top: -30px;
+
+
 }
 
 .active {
