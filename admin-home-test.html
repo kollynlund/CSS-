@@ -53,9 +53,8 @@
 	<div class="container">
 		<div class="surveys col-sm-12">
 			<!-- Surveys are dynamically loaded here -->
+
 			<a id="tryme" href="#" data-toggle="modal" data-target="#view-data-modal"> View Data</a>
-
-
 
 		</div> <!-- closes survey -->	
 	</div>
@@ -70,7 +69,11 @@
 		<form class="add-survey-form">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
 				<div class="company-name-header">Kneaders |</div><div class="text-header">Customer Satisfaction Survey Data</div>
+
+				<h4 class="modal-title" id="myModalLabel"><input type="text" placeholder="Enter name of survey here"></input></h4>
+
 			</div>
 			<div class="modal-body">
 
@@ -117,6 +120,26 @@
 			      </tbody>
 			    </table>
 			
+								<div class="search">
+							
+								 	<select type="select" class="search-input-q-type">
+									 	<option class="first-option"> Question Type </option>
+									 	<option> Yes / No</option>
+									 	<option> Scale 1-5</option>
+								 	</select>
+								 	<i class="fa down-arrow fa-sort-desc"></i>
+								</div>
+
+								<button id='add-question' type='button' value='Add Question'>Add question <i class='fa fa-plus add-q-icon'></i></button>
+
+								<div class="delete-question clearfix">
+									<button type='button' data-toggle='modal' data-target='#confirm-delete-question' value='Delete Question'><i class='fa fa-trash'></i></button>
+								</div>
+							</div>		
+						</div> <!-- close row -->
+					</div> <!-- close question-block -->
+				</div> <!-- closes question container -->			
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -139,7 +162,7 @@
 				<h4 class="modal-title" id="myModalLabel"><input type="text" placeholder="Enter name of survey here"></h4>
 			</div>
 			<div class="modal-body">
-				<div class='question-container'>
+				<div class='question-container add-survey-question-container'>
 					<div class='question-block add-survey-question-block'>
 						<div class='row'>
 							<div class='col-sm-2'>
@@ -153,7 +176,7 @@
 									<input type="text" class="search-input" placeholder="Enter your first question here"></input>
 								</div>
 
-								 <div class="search">
+								<div class="search">
 							
 								 	<select type="select" class="search-input-q-type">
 									 	<option class="first-option"> Question Type </option>
