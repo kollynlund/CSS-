@@ -2,20 +2,23 @@
 <html>
 <head>
 	<title>CSS - Customer Satisfaction Survey</title>
+
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="import" href="components/polymer/polymer.html">
 	<link rel="stylesheet" type="text/css" href="css/add-survey.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
 	<script src="js/functions.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/d3.v3.min.js"></script>
 	<script src="js/queue.v1.min.js"></script>
 	<script src="js/survey_data_handling.js"></script>
+	<script src="js/analytics.js"></script>
+
 </head>
 
 <body>
@@ -50,7 +53,10 @@
 	<div class="container">
 		<div class="surveys col-sm-12">
 			<!-- Surveys are dynamically loaded here -->
-			<a href="#"><div id="view-data-modal"></div></a>
+			<a id="tryme" href="#" data-toggle="modal" data-target="#view-data-modal"> View Data</a>
+
+
+
 		</div> <!-- closes survey -->	
 	</div>
 </div>
@@ -64,45 +70,57 @@
 		<form class="add-survey-form">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><input type="text" placeholder="Enter name of survey here"></h4>
+				<div class="company-name-header">Kneaders |</div><div class="text-header">Customer Satisfaction Survey Data</div>
 			</div>
 			<div class="modal-body">
-				<div id="ihateyou" class='question-container'>
-					<div class='question-block'>
-						<div class='row'>
-							<div class='col-sm-2'>
-								<div class='q-number-container'>
-									<p class='question-number'>Q1</p>
-								</div>
-							</div>
 
-							<div class='col-sm-10'>
-								<div class="search">
-									<input type="text" class="search-input" placeholder="Enter your first question here"></input>
-								</div>
-
-								 <div class="search">
-							
-								 	<select type="select" class="search-input-q-type">
-									 	<option class="first-option"> Question Type </option>
-									 	<option> Yes / No</option>
-									 	<option> Scale 1-5</option>
-								 	</select><i class="fa down-arrow fa-sort-desc"></i>
-								</div>
-
-								<button id='add-question' type='button' value='Add Question'>Add question <i class='fa fa-plus add-q-icon'></i></button>
-
-								<div class="delete-question clearfix">
-									<button type='button' data-toggle='modal' data-target='#confirm-delete-question' value='Delete Question'><i class='fa fa-trash'></i></button>
-								</div>
-							</div>		
-						</div> <!-- close row -->
-					</div> <!-- close question-block -->
-				</div> <!-- closes question container -->			
+				<table class="sortable">
+			      <thead>
+			        <tr>
+			          <th data-sort="name">Question #</th>
+			          <th data-sort="name">Location</th>
+			          <th data-sort="duration">Answer(on average)</th>
+			          <th data-sort="date">Date</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <td>#1</td>
+			          <td>Wildwood</td>
+			          <td>3.5</td>
+			          <td>2014-07-16</td>
+			        </tr>
+			        <tr>
+			          <td>#2</td>
+			          <td>Heber</td>
+			          <td>2.9</td>
+			          <td>2014-02-28</td>
+			        </tr>
+			        <tr>
+			          <td>#3</td>
+			          <td>Ghostland</td>
+			          <td>4.8</td>
+			          <td>2012-04-10</td>
+			        </tr>
+			        <tr>
+			          <td>#4</td>
+			          <td>Salt Lake City</td>
+			          <td>.6 (y/n)</td>
+			          <td>2005-12-21</td>
+			        </tr>
+			        <tr>
+			          <td>#5</td>
+			          <td>Wagonhills</td>
+			          <td>.9 (y/n)</td>
+			          <td>2007-04-12</td>
+			        </tr>
+			      </tbody>
+			    </table>
+			
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<button data-toggle='modal' data-target='#confirm-finish-survey' value='Finish Survey' type="button" class="btn btn-primary" id="add-new-survey">Submit survey <i class='fa fa-check finish-s-icon'></i></button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				
 			</div>
 		</form>
 	</div>
@@ -282,6 +300,7 @@
 
 <script src="js/functions.js"></script>
 <script src="js/add_question.js"></script>
+<script src="js/analytics.js"></script>
 </body>
 
 </html>

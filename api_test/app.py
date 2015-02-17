@@ -54,7 +54,7 @@ class Answer(db.Model):
 
 
 def add_cors_headers(response):
-    	response.headers['Access-Control-Allow-Origin'] = 'http://localhost:8010'    
+    	response.headers['Access-Control-Allow-Origin'] = 'http://localhost'  
     	response.headers['Access-Control-Allow-Credentials'] = 'true'
 	response.headers['Access-Control-Allow-Headers'] = 'content-type'
     	return response
