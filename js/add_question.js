@@ -45,7 +45,7 @@ function addQuestionToNewSurvey() {
 		if (questions.length < 4) {
 			new_question_sections
 			.append('button').attr('id','add-question').attr('type','button').attr('value','Add Question').html('Add Question')
-			.on("click",addQuestion)
+			.on("click",addQuestionToNewSurvey)
 			.append('i').attr('class','fa fa-plus add-q-icon add-question')
 			;
 		}
@@ -97,6 +97,7 @@ function submitNewSurvey() {
 		alert(data);
 	})
 }
+
 
 
 
