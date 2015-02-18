@@ -19,13 +19,10 @@
 
 	<h1 class="intro">Take this 4 question survey and recieve 35% off next time you come to Kneaders</h1>
 	   
-    <a class="btn-enter" data-transition="slide" href="#q1">Start Survey</a>
+    <p class="btn-enter"><a data-transition="slide" href="#q1">Start Survey</a></p>
     
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<h4>Kneaders Cutstomer Satisfaction Survey</h4>
-	</div><!-- /footer -->
 </div><!-- /page -->
 
 <!-- Start of q1 page -->
@@ -40,26 +37,53 @@
 	   <div class="col"><i class="fa fa-gift gold"></i></div>
 	</div>
 	</div><!-- /header -->
-
+<div class="wrapper">
 	<div role="main" class="ui-content">
 
 		<div class="question-container">
 		  <p class="question">On a scale from 1 to 5, with 1 being dirty and 5 being clean how is the cleanliness of our restaurant?</p>
-		      <div class="lever">
-		        <div class="ragerange">
-		            <input type="range" min="1" max="5" step="1" value="2.25" class="custom-range" />
-		        </div>
-		      </div> <!-- close slider -->
+
+
+		  
+<div class="scale-container">
+	<fieldset data-role="controlgroup" data-type="horizontal">
+
+		<input type="radio" name="scale" id="radio-choice-h-2a" value="off">
+		<label class="scale" for="radio-choice-h-2a">1</label>
+
+		<input type="radio" name="scale" id="radio-choice-h-2b" value="off">
+		<label class="scale" for="radio-choice-h-2b">2</label>
+
+		<input type="radio" name="scale" id="radio-choice-h-2c" value="off">
+		<label class="scale" for="radio-choice-h-2c">3</label>
+
+		<input type="radio" name="scale" id="radio-choice-h-2d" value="off">
+		<label class="scale" for="radio-choice-h-2d">4</label>
+
+		<input type="radio" name="scale" id="radio-choice-h-2e" value="off">
+		<label class="scale" for="radio-choice-h-2e">5</label>
+
+	</fieldset>
+</div>
+
+		  
+
+
+
+
+
 		</div> <!-- close question-container -->
 
-		<p><a class="btn btn-primary pull-left btn-next" href="#enter" data-transition="slide" role="button"><i class="fa fa-arrow-left"></i></a></p>
-		<p><a class="btn btn-primary pull-right btn-next" href="#q2" data-transition="slide" role="button"><i class="fa fa-arrow-right"></i></a></p>
+		<p><a class="pull-left" href="#enter" data-transition="slide" role="button"><i class="fa fa-arrow-left"></i></a></p>
+		<p><a class="pull-right" href="#q2" data-transition="slide" role="button"><i class="fa fa-arrow-right"></i></a></p>
 
 	</div><!-- /content -->
-
+</div>
+<div class="error">
 	<div data-role="footer">
-		<h4>Kneaders Cutstomer Satisfaction Survey - You have 3 questions left</h4>
+		<h4 class="error-msg"><i class="fa fa-exclamation-triangle"></i>Please select an answer to continue</h4>
 	</div><!-- /footer -->
+</div>
 </div><!-- /page -->
 
 
@@ -79,7 +103,6 @@
 		   <div class="col"><i class="fa fa-gift gold"></i></div>
 	</div>
 	</div><!-- /header -->
-
 	<div role="main" class="ui-content">
 <div class="question-container">
   <p class="question">Did you enjoy your food?</p>
@@ -221,12 +244,8 @@
 	<div role="main" class="ui-content">
 
 	  <div class="question-container">
-  <p>Thanks for taking the survey, enter your email address to redeem your coupon!</p>
-
-      <div class="custom-input">
-        <input type="textarea" value="" placeholder="Email" />
-        <span class="placeholder" data-holder="Placeholder">Email</span>
-      </div>
+  <p>Thanks for taking the survey, to receive your coupon enter your email address below!</p>
+<label for="email">Email Address:</label><input type="text" name="email" id="email" value="">
 </div>
 
 
