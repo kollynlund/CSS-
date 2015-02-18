@@ -12,14 +12,6 @@ function loadSurveys(error, surveys) {
 		.append('div').attr('class','survey-name')
 		.html(d.survey_name);
 
-		/*
-		new_survey_main
-		.append('div')
-		.attr('class','survey-image')
-		.append('i')
-		.attr('class','fa fa-picture-o');
-		*/
-
 		var new_survey_secondary = new_survey
 								   .append("div").attr("class", 'survey-secondary')
 								   ;
