@@ -96,8 +96,11 @@ function submitNewSurvey() {
 	.done(function(data) {
 		alert(data);
 	})
-	
 }
+
+
+
+
 
 
 addQuestionToNewSurveySetup();
