@@ -61,6 +61,9 @@ function addQuestionToNewSurvey() {
 
 
 function deleteQuestionFromNewSurvey(question_number) {
+
+	// TODO: Fix the fact that only the middle questions are deleting correctly
+
 	console.log(question_number);
 	var questions = d3.selectAll('.add-survey-question-block')[0];
 	var number_of_questions = questions.length;

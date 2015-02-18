@@ -192,6 +192,9 @@ function addBrandNewQuestion() {
 }
 
 
+// TODO: Implement question delete functionality for the Edit menu
+// TODO: Implement edit question API call
+
 
 queue()
 .defer(d3.json, 'http://localhost:5000/api/survey')
