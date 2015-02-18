@@ -1,5 +1,4 @@
 function addQuestion() {
-	console.log("fooqueue");
 
 	var questions = d3.selectAll('.add-survey-question-block')[0];
 	var current_question = questions[questions.length-1];
@@ -8,8 +7,6 @@ function addQuestion() {
 
 	if (questions.length < 5) {
 		var new_question_number = questions.length + 1;
-
-		console.log(d3.select('.add-survey-question-container'));
 
 		var new_question_row = d3.select('.add-survey-question-container')
 						   .append('div').attr('class','question-block  add-survey-question-block').attr('id',String(new_question_number))
