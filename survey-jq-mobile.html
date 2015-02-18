@@ -14,23 +14,17 @@
 
 <!-- Start of first page -->
 <div data-role="page" id="enter">
-
-	<div data-role="header">
-		<div id="q1">
-</div>
-	</div><!-- /header -->
-
+	
 	<div role="main" class="ui-content">
-		    <div class="front-page">
-      <h1 class="intro">Take this 4 question survey and recieve 35% off next time you come to Kneaders</h1>
-      <a class="btn-enter" data-transition="slide" href="#q1">Start Survey</a>
-    </div>
-	</div>
 
+	<h1 class="intro">Take this 4 question survey and recieve 35% off next time you come to Kneaders</h1>
+	   
+    <a class="btn-enter" data-transition="slide" href="#q1">Start Survey</a>
+    
 	</div><!-- /content -->
 
 	<div data-role="footer">
-		<h4>Page Footer</h4>
+		<h4>Kneaders Cutstomer Satisfaction Survey</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
@@ -50,7 +44,7 @@
 	<div role="main" class="ui-content">
 
 		<div class="question-container">
-		  <p>On a scale from 1 to 5, with 1 being dirty and 5 being clean how is the cleanliness of our restaurant?</p>
+		  <p class="question">On a scale from 1 to 5, with 1 being dirty and 5 being clean how is the cleanliness of our restaurant?</p>
 		      <div class="lever">
 		        <div class="ragerange">
 		            <input type="range" min="1" max="5" step="1" value="2.25" class="custom-range" />
@@ -88,7 +82,7 @@
 
 	<div role="main" class="ui-content">
 <div class="question-container">
-  <p>Did you enjoy your food?</p>
+  <p class="question">Did you enjoy your food?</p>
 
   <label class="radio"><p>Yes</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
       </label>
@@ -129,7 +123,7 @@
 
 	<div role="main" class="ui-content">
 		<div class="question-container">
-		  <p>When was the last time you came to Kneaders?</p>
+		  <p class="question">When was the last time you came to Kneaders?</p>
 
 		  <label class="radio">
 		  	<p>1 week</p>
@@ -140,16 +134,7 @@
 	        <p>2 weeks</p>
 		    <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
    	      </label>
-
-	      <label class="radio">
-	        <p>3 weeks</p>
-		    <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
-   	      </label>   
-
-	      <label class="radio">
-	        <p>4 weeks</p>
-		    <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
-   	      </label>   	      	      
+     	      
 
 		 </div>
 
@@ -188,15 +173,15 @@
 	<div role="main" class="ui-content">
 
 		<div class="question-container">
-  <p>Will you tell your friends about what you ate today?</p>
+  <p class="question">Will you tell your friends about what you ate today?</p>
 
   <label class="radio"><p>
-    No</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
+    Yes</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
 
       </label>
 
       <label class="radio">
-        <p>Yes</p>
+        <p>No</p>
         <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
  
       </label>
