@@ -6,17 +6,14 @@ function loadSurveys(error, surveys) {
 	var surveys_container = d3.select('.surveys');
 	surveys.objects.forEach(function(d) {
 		var new_survey = surveys_container
-						 .append('div')
-						 .attr('class', 'survey col-sm-4')
+						 .append('div').attr('class', 'survey col-sm-4')
 						 ;
 		var new_survey_main = new_survey
-							  .append("div")
-							  .attr("class", 'survey-main')
+							  .append("div").attr("class", 'survey-main')
 							  ;
 
 		new_survey_main
-		.append('div')
-		.attr('class','survey-name')
+		.append('div').attr('class','survey-name')
 		.html(d.survey_name);
 
 		/*
@@ -28,31 +25,24 @@ function loadSurveys(error, surveys) {
 		*/
 
 		var new_survey_secondary = new_survey
-								   .append("div")
-								   .attr("class", 'survey-secondary')
+								   .append("div").attr("class", 'survey-secondary')
 								   ;
 		if (d.is_live) {
 			new_survey_secondary
-			.append('p')
-			.attr('class','live-txt')
+			.append('p').attr('class','live-txt')
 			.html('<i class="fa fa-globe live-icon"></i>This survey is live')
 			;
 		}
 
 		new_survey_secondary
-		.append('p')
-		.attr('class','view-data-txt')
+		.append('p').attr('class','view-data-txt')
+		.append('a').attr('href','#').attr('id','tryme').attr('data-toggle','modal').attr('data-target','#view-data-modal')
 		.html('<i class="fa fa-bar-chart data-icon"></i>View data')
 		;
 
 		new_survey_secondary
-		.append('a')
-		.attr('class','edit-survey-link')
-		.attr('href','#')
-		.append('p')
-		.attr('class','edit-icon-txt')
-		.attr('data-toggle','modal')
-		.attr('data-target','#edit-quiz-modal')
+		.append('a').attr('class','edit-survey-link').attr('href','#')
+		.append('p').attr('class','edit-icon-txt').attr('data-toggle','modal').attr('data-target','#edit-quiz-modal')
 		.html('<i class="fa fa-pencil edit-icon"></i>Edit')
 		;
 
