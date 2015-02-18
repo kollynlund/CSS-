@@ -1,4 +1,4 @@
-function addQuestion() {
+function addQuestionToNewSurvey() {
 
 	var questions = d3.selectAll('.add-survey-question-block')[0];
 	var current_question = questions[questions.length-1];
@@ -23,12 +23,12 @@ function addQuestion() {
 
 		new_question_sections
 		.append('div').attr('class','search')
-		.append('input').attr('type','text').attr('class','search-input').attr('placeholder','Enter your question here')
+		.append('input').attr('type','text').attr('name','q'+String(new_question_number)+'_text').attr('class','search-input').attr('placeholder','Enter your question here')
 		;
 
 		var new_question_section_2 = new_question_sections.append('div').attr('class','search');
 
-		var new_question_type_dropdown = new_question_section_2.append('select').attr('type','select').attr('class','search-input-q-type');
+		var new_question_type_dropdown = new_question_section_2.append('select').attr('name','q'+String(new_question_number)+'_type').attr('type','select').attr('class','search-input-q-type');
 		
 		new_question_type_dropdown
 		.append('option').attr('class','first-option').html(' Question Type ');
@@ -58,11 +58,48 @@ function addQuestion() {
 	}
 }
 
-function addQuestionSetup() {
+
+function addQuestionToNewSurveySetup() {
 	var questions = d3.selectAll('.add-survey-question-block')[0];
 	var current_question = questions[questions.length-1];
 
-	d3.select(current_question).select('#add-question').on("click", addQuestion)
+	d3.select(current_question).select('#add-question').on("click", addQuestionToNewSurvey)
 }
 
-addQuestionSetup();
+
+function submitNewSurvey() {
+	$.fn.serializeObject = function()
+	{
+		var o = {};
+		var a = this.serializeArray();
+		$.each(a, function() {
+			if (o[this.name] !== undefined) {
+				if (!o[this.name].push) {
+					o[this.name] = [o[this.name]];
+				}
+				o[this.name].push(this.value || '');
+			} else {
+				o[this.name] = this.value || '';
+			}
+		});
+		return o;
+	};
+
+	alert(JSON.stringify($('#add-survey-form').serializeObject()));
+	
+	$.ajax({
+		url: 'http://localhost:5000/api/survey',
+		contentType: 'application/json',
+		type: 'POST',
+		data: JSON.stringify($('#add-survey-form').serializeObject()),
+	})
+	.done(function(data) {
+		alert(data);
+	})
+	
+}
+
+
+addQuestionToNewSurveySetup();
+
+d3.select('.confirm-submit-survey-finish-button').on("click",submitNewSurvey);

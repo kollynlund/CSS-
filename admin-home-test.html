@@ -129,10 +129,10 @@
 <!-- Add-Quiz-Modal -->
 <div class="modal fade" id="add-quiz-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-content modal-add-quiz">
-		<form class="add-survey-form">
+		<form class="add-survey-form" id="add-survey-form" method="POST">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><input type="text" placeholder="Enter name of survey here"></h4>
+				<h4 class="modal-title" id="myModalLabel"><input name="survey_name" type="text" placeholder="Enter name of survey here"></h4>
 			</div>
 			<div class="modal-body">
 				<div class='question-container add-survey-question-container'>
@@ -146,15 +146,15 @@
 
 							<div class='col-sm-10'>
 								<div class="search">
-									<input type="text" class="search-input" placeholder="Enter your first question here"></input>
+									<input type="text" name="q1_text" class="search-input" placeholder="Enter your first question here"></input>
 								</div>
 
 								 <div class="search">
 							
-								 	<select type="select" class="search-input-q-type">
+								 	<select type="select" name="q1_type" class="search-input-q-type">
 									 	<option class="first-option"> Question Type </option>
-									 	<option> Yes / No</option>
-									 	<option> Scale 1-5</option>
+									 	<option value="Yes / No"> Yes / No</option>
+									 	<option value="Scale 1-5"> Scale 1-5</option>
 								 	</select><i class="fa down-arrow fa-sort-desc"></i>
 								</div>
 
@@ -266,7 +266,7 @@
 		</div>
 
 		<div class="modal-footer">
-			<button type="button" class="btn btn-default" data-dismiss="modal">Finish</button>
+			<button type="button" class="btn btn-default confirm-submit-survey-finish-button" data-dismiss="modal">Finish</button>
 			<button type="button" class="btn btn-primary">Cancel</button>
 		</div>
 	</div> <!-- close content -->
