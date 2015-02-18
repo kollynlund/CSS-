@@ -182,31 +182,12 @@ ul.dropdown li a:hover {
 
 
 
-
-
-/* Filter buttons */
-button {
-	background-color: #d7d7d7;
-	border: none;
-	padding: 3px 10px 4px 10px;
-	border-radius: 4px;
-	color: #333;
-	font-family: 'Karla', sans-serif;
-	font-size: 100%;}
-
-button:hover, button.active {
-	background-color: #00cccc;
-	color: #fff;
-	cursor: pointer;}
-
-
 /* Table styles */
 table {
 	margin: 0px auto;
 	width: 780px;}
 table#rates	{width: 380px;}
 th, td {
-	border-radius: 3px;
 	color: #333;
 	padding: 7px 10px 5px 10px;
 	min-width: 9em;

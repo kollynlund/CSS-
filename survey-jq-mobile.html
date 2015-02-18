@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/survey-jq-mobile.css">
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+<!-- Start of first page -->
+<div data-role="page" id="enter">
+
+	<div data-role="header">
+		<div id="q1">
+</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		    <div class="front-page">
+      <h1 class="intro">Take this 4 question survey and recieve 35% off next time you come to Kneaders</h1>
+      <a class="btn-enter" data-transition="slide" href="#q1">Start Survey</a>
+    </div>
+	</div>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of q1 page -->
+<div data-role="page" id="q1">
+
+	<div data-role="header">
+			<div  class="status">
+	  <div class="col active">1</div>
+	   <div class="col">2</div>
+	   <div class="col">3</div>
+	   <div class="col">4</div>
+	   <div class="col"><i class="fa fa-gift gold"></i></div>
+	</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<div class="question-container">
+		  <p>On a scale from 1 to 5, with 1 being dirty and 5 being clean how is the cleanliness of our restaurant?</p>
+		      <div class="lever">
+		        <div class="ragerange">
+		            <input type="range" min="1" max="5" step="1" value="2.25" class="custom-range" />
+		        </div>
+		      </div> <!-- close slider -->
+		</div> <!-- close question-container -->
+
+		<p><a class="btn btn-primary pull-left btn-next" href="#enter" data-transition="slide" role="button"><i class="fa fa-arrow-left"></i></a></p>
+		<p><a class="btn btn-primary pull-right btn-next" href="#q2" data-transition="slide" role="button"><i class="fa fa-arrow-right"></i></a></p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Kneaders Cutstomer Satisfaction Survey - You have 3 questions left</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+<!-- Start of q2 page -->
+<div data-role="page" id="q2">
+
+	<div data-role="header">
+	   <div  class="status">
+		   <div class="col active">1</div>
+		   <div class="col active">2</div>
+		   <div class="col">3</div>
+		   <div class="col">4</div>
+		   <div class="col"><i class="fa fa-gift gold"></i></div>
+	</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+<div class="question-container">
+  <p>Did you enjoy your food?</p>
+
+  <label class="radio"><p>Yes</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
+      </label>
+
+      <label class="radio">
+        <p>No</p>
+        <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
+
+      </label>
+ </div>
+		
+        <p><a class="btn btn-primary pull-left btn-next" href="#q1" data-transition="slide" role="button"><i class="fa fa-arrow-left"></i></a></p>
+    	<p><a class="btn btn-primary pull-right btn-next" href="#q3" data-transition="slide" role="button"><i class="fa fa-arrow-right"></i></a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Kneaders Cutstomer Satisfaction Survey - You have 2 questions left</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+<!-- Start of q3 page -->
+<div data-role="page" id="q3">
+
+	<div data-role="header">
+	   <div  class="status">
+		   <div class="col active">1</div>
+		   <div class="col active">2</div>
+		   <div class="col active">3</div>
+		   <div class="col">4</div>
+		   <div class="col"><i class="fa fa-gift gold"></i></div>
+	</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<div class="question-container">
+		  <p>When was the last time you came to Kneaders?</p>
+
+		  <label class="radio">
+		  	<p>1 week</p>
+		  	<input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
+		  </label>
+
+	      <label class="radio">
+	        <p>2 weeks</p>
+		    <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
+   	      </label>
+
+	      <label class="radio">
+	        <p>3 weeks</p>
+		    <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
+   	      </label>   
+
+	      <label class="radio">
+	        <p>4 weeks</p>
+		    <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1"/>
+   	      </label>   	      	      
+
+		 </div>
+
+    <p><a class="btn btn-primary pull-left btn-next" href="#q2" data-transition="slide" role="button"><i class="fa fa-arrow-left"></i></a></p>
+	<p><a class="btn btn-primary pull-right btn-next" href="#q4" data-transition="slide" role="button"><i class="fa fa-arrow-right"></i></a></p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Kneaders Cutstomer Satisfaction Survey - You have 1 question left</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+<!-- Start of q4 page -->
+<div data-role="page" id="q4">
+
+	<div data-role="header">
+	   <div  class="status">
+		   <div class="col active">1</div>
+		   <div class="col active">2</div>
+		   <div class="col active">3</div>
+		   <div class="col active">4</div>
+		   <div class="col"><i class="fa fa-gift gold"></i></div>
+	</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+		<div class="question-container">
+  <p>Will you tell your friends about what you ate today?</p>
+
+  <label class="radio"><p>
+    No</p><input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
+
+      </label>
+
+      <label class="radio">
+        <p>Yes</p>
+        <input type="radio" name="radio1" id="radio1" class="custom-radio" value="option1" />
+ 
+      </label>
+</div>
+
+
+        <p><a class="btn btn-primary pull-left btn-next" href="#q3" data-transition="slide" role="button"><i class="fa fa-arrow-left"></i></a></p>
+    	<p><a class="btn btn-primary pull-right btn-next" href="#reward" data-transition="slide" role="button"><i class="fa fa-arrow-right"></i></a></p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Kneaders Cutstomer Satisfaction Survey - This is your last question</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+<!-- Start of rewards page -->
+<div data-role="page" id="reward">
+
+	<div data-role="header">
+	   <div  class="status">
+		   <div class="col active">1</div>
+		   <div class="col active">2</div>
+		   <div class="col active">3</div>
+		   <div class="col active">4</div>
+		   <div class="col active"><i class="fa fa-gift gold"></i></div>
+	</div>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+
+	  <div class="question-container">
+  <p>Thanks for taking the survey, enter your email address to redeem your coupon!</p>
+
+      <div class="custom-input">
+        <input type="textarea" value="" placeholder="Email" />
+        <span class="placeholder" data-holder="Placeholder">Email</span>
+      </div>
+</div>
+
+
+ 
+  
+ 
+   <p><a class="btn btn-primary pull-right btn-finish" href="#enter" role="button">Submit
+</a></p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Kneaders Cutstomer Satisfaction Survey - This is your last question</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
