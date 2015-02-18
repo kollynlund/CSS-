@@ -47,12 +47,6 @@ function loadSurveys(error, surveys) {
 	;
 }
 
-
-
-
-
-
-
 queue()
 .defer(d3.json, 'http://localhost:5000/api/survey')
 .await(loadSurveys)
