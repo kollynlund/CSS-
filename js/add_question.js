@@ -52,10 +52,83 @@ function addQuestionToNewSurvey() {
 
 		new_question_sections
 		.append('div').attr('class','delete-question clearfix')
+		.on("click",function(){deleteQuestionFromNewSurvey(new_question_number);})
 		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question')
 		.append('i').attr('class','fa fa-trash')
 		;
 	}
+}
+
+
+function deleteQuestionFromNewSurvey(question_number) {
+	console.log(question_number);
+	var questions = d3.selectAll('.add-survey-question-block')[0];
+	var number_of_questions = questions.length;
+	var current_question = questions[question_number-1];
+
+	for (var i = question_number-1; i < number_of_questions; i++) {
+		var question_to_change = d3.selectAll('.add-survey-question-block')[0][i];
+
+		console.log(d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.search')
+		.select('input.search-input')
+		);
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.attr('id',i)
+		.select('div.col-sm-2')
+		.select('div.q-number-container')
+		.select('p.question-number')
+		.html('Q'+String(i))
+		;
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.search')
+		.select('input.search-input')
+		.attr('name','q'+String(i)+'_text')
+		;
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.search')
+		.select('select.search-input-q-type')
+		.attr('name','q'+String(i)+'_type')
+		;
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.delete-question')
+		.on("click",function(){deleteQuestionFromNewSurvey(i);})
+	}
+
+	d3.select(current_question).remove();
+
+	var updated_question_list = d3.selectAll('.add-survey-question-block')[0];
+	var updated_number_of_questions = updated_question_list.length;
+
+	console.log(d3.select(updated_question_list[updated_number_of_questions-1]));
+
+
+	var pre_question_selection = d3.select(updated_question_list[updated_number_of_questions-1])
+								 .select('div.row')
+								 .select('div.col-sm-10')
+								 ;
+
+	if (pre_question_selection.select('#add-question').empty()) {
+		pre_question_selection
+		.append('button').attr('id','add-question').attr('type','button').attr('value','Add Question').html('Add Question')
+		.on("click",addQuestionToNewSurvey)
+		.append('i').attr('class','fa fa-plus add-q-icon add-question')
+		;
+	}
+
 }
 
 
