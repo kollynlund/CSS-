@@ -33,8 +33,6 @@ function loadSurveys(error, surveys) {
 		.append('p').attr('class','edit-icon-txt').attr('data-toggle','modal').attr('data-target','#edit-quiz-modal')
 		.html('<i class="fa fa-pencil edit-icon"></i>Edit')
 		;
-
-
 	})
 	;
 }
