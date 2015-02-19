@@ -1,9 +1,10 @@
 function addQuestionToNewSurvey() {
 
 	var questions = d3.selectAll('.add-survey-question-block')[0];
-	var current_question = questions[questions.length-1];
 
-	d3.select(current_question).select('#add-question').remove();
+	if (questions.length > 0) {
+		d3.select(questions[questions.length-1]).select('#add-question').remove();
+	}
 
 	if (questions.length < 5) {
 		var new_question_number = questions.length + 1;
@@ -50,12 +51,14 @@ function addQuestionToNewSurvey() {
 			;
 		}
 
-		new_question_sections
-		.append('div').attr('class','delete-question clearfix')
-		.on("click",function(){deleteQuestionFromNewSurvey(new_question_number);})
-		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question')
-		.append('i').attr('class','fa fa-trash')
-		;
+		if (questions.length > 0) {
+			new_question_sections
+			.append('div').attr('class','delete-question clearfix')
+			.on("click",function(){deleteQuestionFromNewSurvey(new_question_number);})
+			.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question')
+			.append('i').attr('class','fa fa-trash')
+			;
+		}
 	}
 }
 
@@ -180,6 +183,6 @@ function submitNewSurvey() {
 
 
 
-addQuestionToNewSurveySetup();
+addQuestionToNewSurvey();
 
 d3.select('.confirm-submit-survey-finish-button').on("click",submitNewSurvey);

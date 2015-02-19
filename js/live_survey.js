@@ -102,6 +102,7 @@ function submitSurveyAnswers() {
 				o[this.name] = this.value || '';
 			}
 		});
+
 		delete o['email'];
 
 		function twoDigits(d) {
@@ -115,6 +116,7 @@ function submitSurveyAnswers() {
 		};
 
 		o['timestamp'] = new Date().toMysqlFormat();
+
 		return o;
 	};
 
@@ -131,7 +133,6 @@ function submitSurveyAnswers() {
 	})
 	
 }
-
 
 
 queue()
