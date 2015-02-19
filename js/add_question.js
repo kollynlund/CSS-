@@ -64,23 +64,16 @@ function addQuestionToNewSurvey() {
 
 
 function deleteQuestionFromNewSurvey(question_number) {
-
-	// TODO: Fix the fact that only the middle questions are deleting correctly
-
-	console.log(question_number);
+	console.log('trying to delete question number ',question_number);
 	var questions = d3.selectAll('.add-survey-question-block')[0];
 	var number_of_questions = questions.length;
 	var current_question = questions[question_number-1];
 
 	for (var i = question_number-1; i < number_of_questions; i++) {
+		console.log(i);
 		var question_to_change = d3.selectAll('.add-survey-question-block')[0][i];
 
-		console.log(d3.select(question_to_change)
-		.select('div.row')
-		.select('div.col-sm-10')
-		.select('div.search')
-		.select('input.search-input')
-		);
+		d3.select(question_to_change).attr('id',String(i));
 
 		d3.select(question_to_change)
 		.select('div.row')
@@ -112,15 +105,16 @@ function deleteQuestionFromNewSurvey(question_number) {
 		.select('div.col-sm-10')
 		.select('div.delete-question')
 		.on("click",function(){deleteQuestionFromNewSurvey(i);})
+
+		console.log(d3.select(question_to_change).select('div.row')
+		.select('div.col-sm-10')
+		.select('div.delete-question'));
 	}
 
 	d3.select(current_question).remove();
 
 	var updated_question_list = d3.selectAll('.add-survey-question-block')[0];
 	var updated_number_of_questions = updated_question_list.length;
-
-	console.log(d3.select(updated_question_list[updated_number_of_questions-1]));
-
 
 	var pre_question_selection = d3.select(updated_question_list[updated_number_of_questions-1])
 								 .select('div.row')
@@ -135,14 +129,6 @@ function deleteQuestionFromNewSurvey(question_number) {
 		;
 	}
 
-}
-
-
-function addQuestionToNewSurveySetup() {
-	var questions = d3.selectAll('.add-survey-question-block')[0];
-	var current_question = questions[questions.length-1];
-
-	d3.select(current_question).select('#add-question').on("click", addQuestionToNewSurvey)
 }
 
 

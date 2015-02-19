@@ -70,11 +70,15 @@ function loadEditSurveyQuestions(error, survey_data) {
 						   .append('div').attr('class','row')
 						   ;
 
+		console.log(new_question_row.node().parentNode);
+
 		new_question_row
 		.append('div').attr('class','col-sm-2')
 		.append('div').attr('class','q-number-container')
 		.append('p').attr('class','question-number').html('Q'+String(new_question_number))
 		;
+
+		console.log(new_question_row);
 
 		var new_question_sections = new_question_row.append('div').attr('class','col-sm-10');
 
@@ -94,10 +98,10 @@ function loadEditSurveyQuestions(error, survey_data) {
 						.append('option').attr('value','Scale 1-5').html(' Scale 1-5');
 
 		if (survey_data['q'+String(new_question_number)+'_type'] == 'Scale 1-5') {
-			scale_1_5.attr('selected');
+			scale_1_5.attr('selected','');
 		}
 		if (survey_data['q'+String(new_question_number)+'_type'] == 'Yes / No') {
-			yes_no.attr('selected');
+			yes_no.attr('selected','');
 		}
 
 
@@ -112,11 +116,13 @@ function loadEditSurveyQuestions(error, survey_data) {
 			;
 		}
 
-		new_question_sections
-		.append('div').attr('class','delete-question clearfix')
-		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question')
-		.append('i').attr('class','fa fa-trash')
-		;
+		if (new_question_number != 1) {
+			new_question_sections
+			.append('div').attr('class','delete-question clearfix')
+			.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question').on("click",function(){deleteQuestionFromExistingSurvey(new_question_number)})
+			.append('i').attr('class','fa fa-trash')
+			;
+		}
 	}
 
 	var lastQuestion = 5;
@@ -142,7 +148,7 @@ function addBrandNewQuestion() {
 		var new_question_number = questions.length + 1;
 
 		var new_question_row = d3.select('.edit-survey-question-container')
-						   .append('div').attr('class','question-block  edit-survey-question-block').attr('id',String(new_question_number))
+						   .append('div').attr('class','question-block  edit-survey-question-block') // .attr('id',String(new_question_number))
 						   .append('div').attr('class','row')
 						   ;
 
@@ -185,8 +191,70 @@ function addBrandNewQuestion() {
 
 		new_question_sections
 		.append('div').attr('class','delete-question clearfix')
-		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question')
+		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question').on("click",deleteQuestionFromExistingSurvey(new_question_number))
 		.append('i').attr('class','fa fa-trash')
+		;
+	}
+}
+
+
+function deleteQuestionFromExistingSurvey(question_number) {
+	var questions = d3.selectAll('.edit-survey-question-block')[0];
+	var number_of_questions = questions.length;
+	var current_question = questions[question_number-1];
+
+	for (var i = question_number-1; i < number_of_questions; i++) {
+		var question_to_change = d3.selectAll('.edit-survey-question-block')[0][i];
+
+		d3.select(question_to_change).attr('id',String(i));
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.attr('id',i)
+		.select('div.col-sm-2')
+		.select('div.q-number-container')
+		.select('p.question-number')
+		.html('Q'+String(i))
+		;
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.search')
+		.select('input.search-input')
+		.attr('name','q'+String(i)+'_text')
+		;
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.search')
+		.select('select.search-input-q-type')
+		.attr('name','q'+String(i)+'_type')
+		;
+
+		d3.select(question_to_change)
+		.select('div.row')
+		.select('div.col-sm-10')
+		.select('div.delete-question')
+		.on("click",function(){deleteQuestionFromExistingSurvey(i);})
+	}
+
+	d3.select(current_question).remove();
+
+	var updated_question_list = d3.selectAll('.edit-survey-question-block')[0];
+	var updated_number_of_questions = updated_question_list.length;
+
+	var pre_question_selection = d3.select(updated_question_list[updated_number_of_questions-1])
+								 .select('div.row')
+								 .select('div.col-sm-10')
+								 ;
+
+	if (pre_question_selection.select('#add-question').empty()) {
+		pre_question_selection
+		.append('button').attr('id','add-question').attr('type','button').attr('value','Add Question').html('Add Question')
+		.on("click",addBrandNewQuestion)
+		.append('i').attr('class','fa fa-plus add-q-icon add-question')
 		;
 	}
 }
