@@ -1,14 +1,5 @@
-// TODO: Implement methods to lay out live survey page
-
-
-queue()
-.defer(d3.json,'http://localhost:5000/api/survey?q={%22filters%22:[{%22name%22:%20%22is_live%22,%20%22op%22:%20%22==%22,%20%22val%22:%201}]}')
-.await(setupSurveyPage)
-
-
 function setupSurveyPage(error,survey_data) {
 	survey_data = survey_data.objects[0];
-	//console.log(survey_data);
 
 	var questions = [{'number':1,'text':survey_data.q1_text,'type':survey_data.q1_type}]
 	if (survey_data.q2_text) { questions.push({'number':2,'text':survey_data.q2_text,'type':survey_data.q2_type});}
@@ -16,15 +7,9 @@ function setupSurveyPage(error,survey_data) {
 	if (survey_data.q4_text) { questions.push({'number':4,'text':survey_data.q4_text,'type':survey_data.q4_type});}
 	if (survey_data.q5_text) { questions.push({'number':5,'text':survey_data.q5_text,'type':survey_data.q5_type});}
 
-	//console.log(questions);
-
 	var pages_container = d3.select('.pages-container')
 
-	console.log(questions.length);
 	questions.forEach(function(element, index, array){
-		console.log(element);
-		console.log('q'+String(index+1));
-		console.log('\n');
 		var footer_message = 'Kneaders Customer Satisfaction Survey - You have '+String(questions.length-index)+' questions left';
 		if (questions.length-index == 0) {footer_message = 'Kneaders Customer Satisfaction Survey - This is your last question';}
 
@@ -65,10 +50,7 @@ function setupSurveyPage(error,survey_data) {
 		var left_arrow_href = '#enter';
 		if (index > 0) {left_arrow_href = '#q'+String(index);}
 		var right_arrow_href = '#q'+String(index+2);
-		console.log('index: ',index);
-		console.log('questions.length-1: ',questions.length-1);
 		if (index == questions.length-1) {right_arrow_href = '#reward';}
-		console.log('right-arrow-href: ',right_arrow_href);
 		new_page_content.append('p')
 						.append('a').attr('class','btn btn-primary pull-left btn-next').attr('href',left_arrow_href).attr('data-transition','slide').attr('role','button')
 						.append('i').attr('class','fa fa-arrow-left');
@@ -98,3 +80,9 @@ function setupSurveyPage(error,survey_data) {
 
 	rewards_page.append('div').attr('data-role','footer').append('h4').html('Thanks for your time - enjoy your reward!');
 }
+
+
+
+queue()
+.defer(d3.json,'http://localhost:5000/api/survey?q={%22filters%22:[{%22name%22:%20%22is_live%22,%20%22op%22:%20%22==%22,%20%22val%22:%201}]}')
+.await(setupSurveyPage)
