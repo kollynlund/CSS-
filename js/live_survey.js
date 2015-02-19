@@ -35,18 +35,18 @@ function setupSurveyPage(error,survey_data) {
 																	  .append('fieldset').attr('data-role','controlgroup').attr('data-type','horizontal');
 			var letters = ['a','b','c','d','e'];
 			for (var j = 1; j <= 5; j++) {
-				question_scale_container.append('input').attr('type','radio').attr('name','q'+String(index)+'_answer').attr('id','radio-choice-h-2'+letters[j-1]).attr('value',String(j));
+				question_scale_container.append('input').attr('type','radio').attr('name','q'+String(index+1)+'_answer').attr('id','radio-choice-h-2'+letters[j-1]).attr('value',String(j));
 				question_scale_container.append('label').attr('class','scale').attr('for','radio-choice-h-2'+letters[j-1]).html(String(j));
 			}
 		}
 		else {
 			var radio_yes_option = new_page_question_container.append('label').attr('class','radio');
 			radio_yes_option.append('p').html('Yes');
-			radio_yes_option.append('input').attr('type','radio').attr('name','q'+String(index)+'_answer').attr('id','q'+String(index)+'_answer').attr('class','custom-radio').attr('value','1');
+			radio_yes_option.append('input').attr('type','radio').attr('name','q'+String(index+1)+'_answer').attr('id','q'+String(index)+'_answer').attr('class','custom-radio').attr('value','1');
 
 			var radio_no_option = new_page_question_container.append('label').attr('class','radio');
 			radio_no_option.append('p').html('No');
-			radio_no_option.append('input').attr('type','radio').attr('name','q'+String(index)+'_answer').attr('id','q'+String(index)+'_answer').attr('class','custom-radio').attr('value','0');
+			radio_no_option.append('input').attr('type','radio').attr('name','q'+String(index+1)+'_answer').attr('id','q'+String(index)+'_answer').attr('class','custom-radio').attr('value','0');
 		}
 		
 		var left_arrow_href = '#enter';
@@ -78,9 +78,58 @@ function setupSurveyPage(error,survey_data) {
 	rewards_page_question_container.append('label').attr('for','email').html('Email Address: ');
 	rewards_page_question_container.append('input').attr('type','text').attr('name','email').attr('id','email');
 
-	rewards_page_content.append('p').append('a').attr('class','btn btn-primary pull-right btn-finish').attr('href','#enter').attr('role','button').html('Submit');
+	rewards_page_content.append('p').on("click",submitSurveyAnswers)
+						.append('a').attr('class','btn btn-primary pull-right btn-finish').attr('href','#enter').attr('role','button').html('Submit');
 
 	rewards_page.append('div').attr('data-role','footer').append('h4').html('Thanks for your time - enjoy your reward!');
+
+	pages_container.append('input').attr('type','text').attr('name','survey_id').attr('value',survey_data.id).attr('hidden');
+}
+
+
+function submitSurveyAnswers() {
+	$.fn.serializeSurveyAnswerObject = function()
+	{
+		var o = {};
+		var a = this.serializeArray();
+		$.each(a, function() {
+			if (o[this.name] !== undefined) {
+				if (!o[this.name].push) {
+					o[this.name] = [o[this.name]];
+				}
+				o[this.name].push(this.value || '');
+			} else {
+				o[this.name] = this.value || '';
+			}
+		});
+		delete o['email'];
+
+		function twoDigits(d) {
+			if(0 <= d && d < 10) return "0" + d.toString();
+			if(-10 < d && d < 0) return "-0" + (-1*d).toString();
+			return d.toString();
+		}
+
+		Date.prototype.toMysqlFormat = function() {
+			return this.getUTCFullYear() + "-" + twoDigits(1 + this.getUTCMonth()) + "-" + twoDigits(this.getUTCDate()) + " " + twoDigits(this.getUTCHours()) + ":" + twoDigits(this.getUTCMinutes()) + ":" + twoDigits(this.getUTCSeconds());
+		};
+
+		o['timestamp'] = new Date().toMysqlFormat();
+		return o;
+	};
+
+	alert(JSON.stringify($('#submit-answer-form').serializeSurveyAnswerObject()));
+	
+	$.ajax({
+		url: 'http://localhost:5000/api/answer',
+		contentType: 'application/json',
+		type: 'POST',
+		data: JSON.stringify($('#submit-answer-form').serializeSurveyAnswerObject()),
+	})
+	.done(function(data) {
+		alert(data);
+	})
+	
 }
 
 
