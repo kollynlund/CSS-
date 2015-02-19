@@ -7,6 +7,8 @@ function setupSurveyPage(error,survey_data) {
 	if (survey_data.q4_text) { questions.push({'number':4,'text':survey_data.q4_text,'type':survey_data.q4_type});}
 	if (survey_data.q5_text) { questions.push({'number':5,'text':survey_data.q5_text,'type':survey_data.q5_type});}
 
+	d3.select('.intro').html('Take this '+String(questions.length)+' question survey and receive 35% off next time you come to Kneaders');
+
 	var pages_container = d3.select('.pages-container')
 
 	questions.forEach(function(element, index, array){
