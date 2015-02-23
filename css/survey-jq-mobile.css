@@ -91,7 +91,7 @@
 }
 
 
-/*____________navigation arrows_______________*/
+/*____________nav arrows_______________*/
 
 
 .fa-arrow-right {
@@ -109,7 +109,7 @@
 }
 
 
-/*____________quiz navigation arrows_______________*/
+/*____________question contain_______________*/
 
 
 
@@ -128,19 +128,8 @@
 }
 
 
-.error {
-  border: 3px solid #B82000;
-  
-}
 
-.error-msg {
-  color: #B82000;
-}
-
-.fa-exclamation-triangle {
-  padding-right: 10px;
-}
-
+/*____________1-5 scale question styles_______________*/
 
 .scale {
   padding: 20px 65px 20px 65px !important; 
@@ -157,6 +146,16 @@
 }
 
 
+/*____________yes/no question styles_______________*/
+
+.ui-radio-on:after {
+  border-color: #569 !important;
+  background-color: #eee !important;
+}
+
+/*____________enter email styles_______________*/
+
+
 label[for=email] {
   margin-top: 20px !important;
   font-size: 1.5em !important;
@@ -167,6 +166,18 @@ input[name=email] {
   padding: 20px !important;
 }
 
+/*____________survey footer styles_______________*/
 
+.error {
+  border: 3px solid #B82000;
+}
+
+.error-msg {
+  color: #B82000;
+}
+
+.fa-exclamation-triangle {
+  padding-right: 10px;
+}
 
 
