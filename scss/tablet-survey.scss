@@ -56,6 +56,9 @@ $secondary-color: #569;
 
 .btn-enter {
   margin: 100px 200px;
+  @media (max-width: 500px) {
+    color: red !important;
+  }
 }
 
 
