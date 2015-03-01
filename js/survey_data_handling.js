@@ -24,7 +24,7 @@ function loadSurveys(error, surveys) {
 
 		new_survey_secondary
 		.append('p').attr('class','view-data-txt')
-		.append('a').attr('href','#').attr('id','tryme').attr('data-toggle','modal').attr('data-target','#view-data-modal').on("click",function(){loadSurveyAnswers(d.id);})
+		.append('a').attr('href','#').attr('id','tryme').attr('data-toggle','modal').attr('data-target','#view-data-modal').on("click",function(){layoutSurveyAnalyticsModal(d.id, [d.q1_text, d.q2_text, d.q3_text, d.q4_text, d.q5_text]);})
 		.html('<i class="fa fa-bar-chart data-icon"></i>View data')
 		;
 
@@ -255,8 +255,19 @@ function deleteQuestionFromExistingSurvey(question_number) {
 }
 
 
-function layoutSurveyAnalyticsModal(survey_id) {
-	
+function layoutSurveyAnalyticsModal(survey_id, survey_questions) {
+	var analytics_table = d3.select("#survey-analytics-table");
+
+	for (var i = 0; i < 5; i++) {
+		if (survey_questions[i]) {
+			var new_row = analytics_table.select('tbody')
+										 .append('tr')
+										 .attr('id','question_'+String(i)+'_data');
+			new_row.append('td').html(survey_questions[i]);
+			new_row.append('td').html("Kneaders Place");
+		}
+	}
+
 
 	
 	queue()
@@ -331,7 +342,12 @@ function addDataToSurveyAnalyticsModal(error, survey_answers) {
 	}
 	q5_average = q5_sum / q5_responses;
 
+	question_averages = [q1_average, q2_average, q3_average, q4_average, q5_average];
 
+	for (var j = 1; j < 6; j++) {
+		var data_row = d3.select('#question_'+String(j)+'_data');
+		data_row.append('td').html(String(question_averages[j-1]));
+	}
 }
 
 
