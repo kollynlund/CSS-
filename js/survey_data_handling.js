@@ -70,15 +70,11 @@ function loadEditSurveyQuestions(error, survey_data) {
 						   .append('div').attr('class','row')
 						   ;
 
-		console.log(new_question_row.node().parentNode);
-
 		new_question_row
 		.append('div').attr('class','col-sm-2')
 		.append('div').attr('class','q-number-container')
 		.append('p').attr('class','question-number').html('Q'+String(new_question_number))
 		;
-
-		console.log(new_question_row);
 
 		var new_question_sections = new_question_row.append('div').attr('class','col-sm-10');
 
@@ -138,7 +134,6 @@ function loadEditSurveyQuestions(error, survey_data) {
 
 
 function addBrandNewQuestion() {
-
 	var questions = d3.selectAll('.edit-survey-question-block')[0];
 	var current_question = questions[questions.length-1];
 
@@ -148,7 +143,7 @@ function addBrandNewQuestion() {
 		var new_question_number = questions.length + 1;
 
 		var new_question_row = d3.select('.edit-survey-question-container')
-						   .append('div').attr('class','question-block  edit-survey-question-block') // .attr('id',String(new_question_number))
+						   .append('div').attr('class','question-block  edit-survey-question-block').attr('id',String(new_question_number))
 						   .append('div').attr('class','row')
 						   ;
 
@@ -191,7 +186,7 @@ function addBrandNewQuestion() {
 
 		new_question_sections
 		.append('div').attr('class','delete-question clearfix')
-		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question').on("click",deleteQuestionFromExistingSurvey(new_question_number))
+		.append('button').attr('type','button').attr('data-toggle','modal').attr('data-target','#confirm-delete-question').attr('value','Delete Question').on("click",function(){deleteQuestionFromExistingSurvey(new_question_number);})
 		.append('i').attr('class','fa fa-trash')
 		;
 	}
@@ -260,8 +255,48 @@ function deleteQuestionFromExistingSurvey(question_number) {
 }
 
 
+function loadSurveyAnswers (survey_id) {
+	queue()
+	.defer(d3.json,'http://localhost:5000/api/answer?q={%22filters%22:[{%22name%22:%20%22survey_id%22,%20%22op%22:%20%22==%22,%20%22val%22:%20'+String(survey_id)+'}]}')
+	.await(layoutSurveyAnalyticsModal)
+	;
+}
+
+
+function layoutSurveyAnalyticsModal(error, survey_answers) {
+	var q1_answers = [];
+	var q2_answers = [];
+	var q3_answers = [];
+	var q4_answers = [];
+	var q5_answers = [];
+
+	survey_answers.forEach(function (answer) {
+		q1_answers.push(answer['q1_answer']);
+		q2_answers.push(answer['q2_answer']);
+		q3_answers.push(answer['q3_answer']);
+		q4_answers.push(answer['q4_answer']);
+		q5_answers.push(answer['q5_answer']);
+	})
+
+	q1_sum = 0;
+	for (var q1 = 0; q1 < q1_answers.length; q1++) {
+		q1_sum += q1_answers[q1];
+	}
+	q1_average = q1_sum / q1_answers.length;
+}
+
+
+
+
+
+
 // TODO: Implement question delete functionality for the Edit menu
 // TODO: Implement edit question API call
+
+
+
+
+
 
 
 queue()
