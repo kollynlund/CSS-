@@ -262,7 +262,7 @@ function layoutSurveyAnalyticsModal(survey_id, survey_questions) {
 		if (survey_questions[i]) {
 			var new_row = analytics_table.select('tbody')
 										 .append('tr')
-										 .attr('id','question_'+String(i)+'_data');
+										 .attr('id','question_'+String(i+1)+'_data');
 			new_row.append('td').html(survey_questions[i]);
 			new_row.append('td').html("Kneaders Place");
 		}
@@ -342,6 +342,7 @@ function addDataToSurveyAnalyticsModal(error, survey_answers) {
 	}
 	q5_average = q5_sum / q5_responses;
 
+	console.log(q1_average, q2_average);
 	question_averages = [q1_average, q2_average, q3_average, q4_average, q5_average];
 
 	for (var j = 1; j < 6; j++) {
