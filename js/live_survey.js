@@ -131,6 +131,14 @@ function submitSurveyAnswers() {
 	.done(function(data) {
 		alert(data);
 	})
+
+	for  (var i = 1; i <= 5; i++) {
+		var question_id = "#q"+String(i)+"_answer";
+		var question_name = "name[value='q"+String(i)+"_answer']";
+		$(question_id).attr('data-cacheval').removeAttr('data-cacheval');
+		$(question_name).removeAttr('data-cacheval');
+	}
+	
 	
 }
 
