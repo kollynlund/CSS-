@@ -22,19 +22,14 @@
   text-decoration: none;
   padding: 40px;
   font-size: 2.5em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  background-color: transparent;
-  border: 3px solid white;
-  text-align: center; }
+  background-color: rgba(220, 100, 100, 0.9);
+  text-align: center;
+  font-weight: 400 !important;
+  letter-spacing: .05em; }
 
 .btn-enter {
-  margin: 100px 200px; }
-  @media (max-width: 500px) {
-    .btn-enter {
-      color: red !important; } }
+  margin: 100px auto;
+  width: 400px; }
 
 .btn-finish {
   padding: 30px 60px 30px 60px;
