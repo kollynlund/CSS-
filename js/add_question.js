@@ -167,8 +167,6 @@ function submitNewSurvey() {
 
 
 
-
-
 addQuestionToNewSurvey();
 
 d3.select('.confirm-submit-survey-finish-button').on("click",submitNewSurvey);
