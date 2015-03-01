@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CSS - Customer Satisfaction Survey</title>
+	<title>Customer Satisfaction | Dashboard</title>
 
 	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<link rel="stylesheet" type="text/css" href="css/add-survey.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/add-survey.css">
+	
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
-	<script src="js/functions.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/d3.v3.min.js"></script>
-	<script src="js/queue.v1.min.js"></script>
-	<script src="js/survey_data_handling.js"></script>
-	<script src="js/analytics.js"></script>
+	<script src="js/add_question.js"></script>
 
 </head>
 
@@ -25,7 +18,7 @@
 <div class="container-fluid header">
 	<div class="row">
 		<div class="col-sm-10">
-			<a href="admin-home.html">
+			<a href="admin-home-test.html">
 				<div class="company-name-header">Kneaders |</div><div class="text-header">Customer Satisfaction Survey</div>
 			</a>
 			<!-- <img class="logo" src="img/logo.png"></img> -->
@@ -42,7 +35,7 @@
 
 					<li><a id="tryme" href="#" data-toggle="modal" data-target="#add-quiz-modal"><i class="fa fa-plus add-survey-icon"></i> Add Survey</a></li>
 
-					<li><a href="#"><i class="fa fa-power-off log-out-icon"></i> Log Out</a></li>
+					<li><a href="index.html"><i class="fa fa-power-off log-out-icon"></i> Log Out</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -69,7 +62,7 @@
 				<div class="company-name-header">Kneaders |</div><div class="text-header">Customer Satisfaction Survey Data</div>
 			</div>
 			<div class="modal-body">
-	<table class="sortable">
+	<table id="survey-analytics-table" class="sortable">
 			      <thead>
 			        <tr>
 			          <th data-sort="name">Question #</th>
@@ -232,10 +225,16 @@
 	</div> <!-- close content -->
 </div> <!-- close modal -->
 
-
 <script src="js/functions.js"></script>
 <script src="js/add_question.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<script src="js/functions.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
+<script src="js/queue.v1.min.js"></script>
+<script src="js/survey_data_handling.js"></script>
 <script src="js/analytics.js"></script>
+
 </body>
 
 </html>
