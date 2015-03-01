@@ -234,3 +234,199 @@ th.descending:after {
 
 
 
+.modal-content {
+    width: 95%;
+	margin: auto;
+	margin-top: 5.5%;
+}
+
+.q-number-container {
+	margin-left: 0px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-left: none;
+
+}
+
+.question-number {
+	display: block;
+	font-size: 2em;
+	text-align: center;
+	letter-spacing: 3px;
+	padding: 10px;
+	padding-bottom: 0px;
+	color: #03A9F4;
+
+}
+
+
+.down-arrow {
+	position: relative;
+	left: -15px;
+}
+
+option {
+	margin-left: 5px !important;
+}
+
+.question-block {
+	background-color: #fff;
+	box-shadow: 0px 4px 5px 1px #999;
+	margin-bottom: 30px;
+
+}
+
+button[value='Delete Question'] {
+	padding: 10px;
+	padding-bottom: 5px;
+	border: none;
+	background-color: transparent;
+	font-size: 1.3em;
+	float: right;
+	color: #F40017 !important; 
+}
+
+.choose-type-of-question {
+	display: inline;
+	font-size: 1.125em;
+}
+
+input[type="text"] {
+	margin-bottom: 10px;
+	margin-top: 30px;
+	display: block;
+	width: 96%;
+}
+
+button[value='Yes or No'] {
+	padding: 10px;
+	width: 20%;
+	margin-bottom: 30px;
+	box-shadow:none; 
+}
+
+button[value='Scale'] {
+	padding: 10px;
+	width: 20%;
+}
+
+
+#add-question {
+	border: none !important; 
+	margin-top: 10px;
+	float: right;
+
+}
+
+button[value="Finish Survey"] {
+	
+}
+
+
+.finish-s-icon {
+	color: #eee; 
+}
+
+.finish-s-icon:hover {
+	color: #eee; 
+}
+
+.add-q-icon, .finish-s-icon {
+	float: right;
+	font-size: 1.3em !important;
+	padding-left: 10px;
+}
+
+.btn-active {
+	background-color: tomato;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+
+
+
+
+
+.search {
+  margin: 0 auto;
+  margin-top: 10px;
+  background: none;
+}
+
+
+.search-input {
+  width: 300px;
+  height: 25px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid grey;
+  color: black !important;
+  transition: all .5s ease;
+}
+.search-input-q-type {
+  width: 175px !important;
+  height: 25px;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid grey;
+  color: black;
+  transition: all .5s ease;
+}
+
+.search-input-q-type:focus {
+  border-bottom: 2px solid #03A9F4;
+}
+
+
+.search-input:focus {
+  border-bottom: 2px solid #03A9F4;
+}
+
+select, .search-input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+
+select {
+	cursor: pointer;
+}
+
+.first-option {
+	color: red;
+}
+
+.modal-add-quiz {
+	background-color: #eee;
+}
+
+/*view data analytics*/
+
+th, td { 
+	padding: 3px 10px; 
+}
+
+.ui-state-hover, ui-state-default { 
+	background: #f5f5f5; 
+}
+
+td {
+ cursor: default; 
+}
+
+th { 
+	cursor: pointer; 
+}
+
+
+
+
+
+
+
+
