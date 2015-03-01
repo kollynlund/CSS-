@@ -24,7 +24,7 @@ function loadSurveys(error, surveys) {
 
 		new_survey_secondary
 		.append('p').attr('class','view-data-txt')
-		.append('a').attr('href','#').attr('id','tryme').attr('data-toggle','modal').attr('data-target','#view-data-modal')
+		.append('a').attr('href','#').attr('id','tryme').attr('data-toggle','modal').attr('data-target','#view-data-modal').on("click",function(){loadSurveyAnswers(d.id);})
 		.html('<i class="fa fa-bar-chart data-icon"></i>View data')
 		;
 
@@ -255,34 +255,83 @@ function deleteQuestionFromExistingSurvey(question_number) {
 }
 
 
-function loadSurveyAnswers (survey_id) {
+function layoutSurveyAnalyticsModal(survey_id) {
+	
+
+	
 	queue()
 	.defer(d3.json,'http://localhost:5000/api/answer?q={%22filters%22:[{%22name%22:%20%22survey_id%22,%20%22op%22:%20%22==%22,%20%22val%22:%20'+String(survey_id)+'}]}')
-	.await(layoutSurveyAnalyticsModal)
+	.await(addDataToSurveyAnalyticsModal)
 	;
 }
 
 
-function layoutSurveyAnalyticsModal(error, survey_answers) {
+function addDataToSurveyAnalyticsModal(error, survey_answers) {
 	var q1_answers = [];
 	var q2_answers = [];
 	var q3_answers = [];
 	var q4_answers = [];
 	var q5_answers = [];
 
-	survey_answers.forEach(function (answer) {
-		q1_answers.push(answer['q1_answer']);
-		q2_answers.push(answer['q2_answer']);
-		q3_answers.push(answer['q3_answer']);
-		q4_answers.push(answer['q4_answer']);
-		q5_answers.push(answer['q5_answer']);
-	})
+	for (var i = 0; i < survey_answers.objects.length; i++) {
+		q1_answers.push(survey_answers.objects[i]['q1_answer']);
+		q2_answers.push(survey_answers.objects[i]['q2_answer']);
+		q3_answers.push(survey_answers.objects[i]['q3_answer']);
+		q4_answers.push(survey_answers.objects[i]['q4_answer']);
+		q5_answers.push(survey_answers.objects[i]['q5_answer']);
+	}
 
 	q1_sum = 0;
+	q1_responses = 0;
 	for (var q1 = 0; q1 < q1_answers.length; q1++) {
-		q1_sum += q1_answers[q1];
+		if (q1_answers[q1] != null) {
+			q1_sum += q1_answers[q1];
+			q1_responses += 1;
+		}
 	}
-	q1_average = q1_sum / q1_answers.length;
+	q1_average = q1_sum / q1_responses;
+
+	q2_sum = 0;
+	q2_responses = 0;
+	for (var q2 = 0; q2 < q2_answers.length; q2++) {
+		if (q2_answers[q2] != null) {
+			q2_sum += q2_answers[q2];
+			q2_responses += 1;
+		}
+	}
+	q2_average = q2_sum / q2_responses;
+
+	q3_sum = 0;
+	q3_responses = 0;
+	for (var q3 = 0; q3 < q3_answers.length; q3++) {
+		if (q3_answers[q3] != null) {
+			q3_sum += q3_answers[q3];
+			q3_responses += 1;
+		}
+	}
+	q3_average = q3_sum / q3_responses;
+
+	q4_sum = 0;
+	q4_responses = 0;
+	for (var q4 = 0; q4 < q4_answers.length; q4++) {
+		if (q4_answers[q4] != null) {
+			q4_sum += q4_answers[q4];
+			q4_responses += 1;
+		}
+	}
+	q4_average = q4_sum / q4_responses;
+
+	q5_sum = 0;
+	q5_responses = 0;
+	for (var q5 = 0; q5 < q5_answers.length; q5++) {
+		if (q5_answers[q5] != null) {
+			q5_sum += q5_answers[q5];
+			q5_responses += 1;
+		}
+	}
+	q5_average = q5_sum / q5_responses;
+
+
 }
 
 
