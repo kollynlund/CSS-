@@ -1,7 +1,3 @@
-var surveys = d3.json('http://localhost:5000/api/survey', function(data){ return data; });
-
-
-
 function loadSurveys(error, surveys) {
 	var surveys_container = d3.select('.surveys');
 	surveys.objects.forEach(function(d) {
@@ -18,14 +14,6 @@ function loadSurveys(error, surveys) {
 		.append('div')
 		.attr('class','survey-name')
 		.html(d.survey_name);
-
-		/*
-		new_survey_main
-		.append('div')
-		.attr('class','survey-image')
-		.append('i')
-		.attr('class','fa fa-picture-o');
-		*/
 
 		var new_survey_secondary = new_survey
 								   .append("div")
@@ -59,11 +47,6 @@ function loadSurveys(error, surveys) {
 	})
 	;
 }
-
-
-
-
-
 
 
 queue()

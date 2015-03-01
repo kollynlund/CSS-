@@ -104,7 +104,7 @@ function deleteQuestionFromNewSurvey(question_number) {
 		.select('div.row')
 		.select('div.col-sm-10')
 		.select('div.delete-question')
-		.on("click",function(){deleteQuestionFromNewSurvey(i);})
+		.on("click",function(){deleteQuestionFromNewSurvey(i-1);})
 
 		console.log(d3.select(question_to_change).select('div.row')
 		.select('div.col-sm-10')
@@ -162,9 +162,6 @@ function submitNewSurvey() {
 		alert(data);
 	})
 }
-
-
-
 
 
 addQuestionToNewSurvey();
