@@ -1,0 +1,186 @@
+#add-survey-form > .modal-body {
+	background-color: #ddd !important;
+}
+
+#add-survey-form > .modal-footer {
+	background-color: #eee !important;
+}
+.q-number-container {
+	margin-left: 5px;
+	margin-bottom: 0px;
+	border-left: none;
+}
+
+
+.question-number {
+	display: block;
+	font-size: 2em;
+	letter-spacing: 3px;
+	padding: 10px;
+	padding-bottom: 0px;
+	color: #03A9F4;
+	font-style: italic;
+	font-weight: 400;
+
+}
+
+.question-block {
+	background-color: #eee;
+	box-shadow: 0px 4px 5px 1px #999;
+	margin-bottom: 30px;
+}
+
+.question-block:focus {
+	border: 1px solid red !important;
+}
+
+.add-survey-modal-survey-name {
+	margin-bottom: 15px !important;
+}
+
+button[value='Delete Question'] {
+	padding: 10px;
+	padding-bottom: 5px;
+	border: none;
+	background-color: transparent;
+	font-size: 1.3em;
+	float: right;
+	color: #F40017 !important; 
+}
+
+
+
+.choose-type-of-question {
+	display: inline;
+	font-size: 1.125em;
+	padding: 10px;
+}
+
+input[type="text"] {
+	display: block;
+	width: 96%;
+}
+
+button[value='Yes or No'] {
+	padding: 10px;
+	width: 20%;
+	margin-bottom: 30px;
+	box-shadow:none; 
+}
+
+button[value='Scale'] {
+	padding: 10px;
+	width: 20%;
+}
+
+
+#add-question {
+	border: none !important; 
+	float: right;
+	background-color: #03A9F4;
+	color: black;
+	padding: 5px 10px;
+	margin-bottom: 3px;
+	margin-right: 3px;
+	font-weight: 400;
+}
+
+.add-q-icon {
+	color: black;
+}
+
+
+
+.finish-s-icon {
+	color: #eee; 
+}
+
+.finish-s-icon:hover {
+	color: #eee; 
+}
+
+.add-q-icon, .finish-s-icon {
+	float: right;
+	font-size: 1.3em !important;
+	padding-left: 10px;
+}
+
+
+
+.search {
+  margin: 0 auto;
+  margin-top: 10px;
+  background: none;
+}
+
+
+
+
+
+
+// Add survey - Question Name
+input[name="survey_name"] {
+  width: 91.5%;	
+  font-size: 1.125em;
+  outline: none;
+  background-color: #fff;
+  border: none;
+  color: black;
+  padding: 10px;
+}
+
+input[name="survey_name"]:focus {
+  border-left: 4px solid #03A9F4;
+}
+
+
+
+
+
+// Add survey - Question Name
+.search input[type="text"] {
+  width: 90%;
+  height: 40px;
+  font-size: 1.125em;
+  padding-left: 10px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  color: black !important;
+  margin-top: 10px;
+}
+
+.search input[type="text"]:focus {
+  border-left: 3px solid #03A9F4;
+}
+
+
+
+
+// Add survey - Question Type
+select[type="select"] {
+  width: 175px !important;
+  font-size: 1.125em;
+  height: 40px;
+  padding-left: 10px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  color: black;
+}
+
+
+select[type="select"]:focus {
+  border-left: 3px solid #03A9F4;
+}
+
+
+
+
+
+
+
+
+
+
+
