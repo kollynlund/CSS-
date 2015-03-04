@@ -5,6 +5,12 @@
 #add-survey-form > .modal-footer {
 	background-color: #eee !important;
 }
+
+
+
+.close-add-survey span {
+width: 30px !important;
+}
 .q-number-container {
 	margin-left: 5px;
 	margin-bottom: 0px;
@@ -50,6 +56,12 @@ button[value='Delete Question'] {
 
 
 
+button[value='Delete Question']:hover {
+    background-color: #77CBF4; 
+}
+
+
+
 .choose-type-of-question {
 	display: inline;
 	font-size: 1.125em;
@@ -85,19 +97,18 @@ button[value='Scale'] {
 	font-weight: 400;
 }
 
+#add-question:hover {
+	background-color: #77CBF4; 
+}
+
+
 .add-q-icon {
 	color: black;
 }
 
 
 
-.finish-s-icon {
-	color: #eee; 
-}
 
-.finish-s-icon:hover {
-	color: #eee; 
-}
 
 .add-q-icon, .finish-s-icon {
 	float: right;
@@ -174,7 +185,22 @@ select[type="select"]:focus {
   border-left: 3px solid #03A9F4;
 }
 
+button[data-target="#confirm-finish-survey"] {
+	border-radius: 0px;
+	background-color: #03A9F4;
+	color: black;
+	border: none;
+}
 
+button[data-target="#confirm-finish-survey"]:hover {
+	background-color: #77CBF4; 
+	color: black;
+
+}
+
+.finish-s-icon {
+	color: black; 
+}
 
 
 
